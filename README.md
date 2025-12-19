@@ -46,7 +46,8 @@
   #### Bisection Method Theory
   <details>
   <summary>Click to expand Theory</summary>
-	  <br>
+  
+<br>
  
  ---
  
@@ -72,8 +73,12 @@
 
 	  ![bisection-img](./bisection.png)
 
+
+   
+<br>
+
 	  
- 
+
 
  ---
 
