@@ -52,6 +52,7 @@
 
   #### Runge Kutta Method Theory
   <details>
+    The RK method is a family of iterative methods used to approximate the solutions of ODEs.
   <summary>Click to expand Theory</summary>
 
  
