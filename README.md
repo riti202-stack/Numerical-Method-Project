@@ -70,12 +70,28 @@ Example Problem:
 Solve dy/dx=x+y   where,y(0)=1
 Find y(0.1) using RK 4th order
 
+Step 1: Given
+	•	f(x,y) = x + y
+	•	x_0 = 0, y_0 = 1
+	•	Step size h = 0.1
 
-  <summary>Click to expand Theory</summary>
+⸻
 
- 
-   
+Step 2: Compute k values
+k1 = 0.1(0 + 1) = 0.1
+k2= 0.1(0.05 + 1.05) = 0.11
+k3= 0.1(0.05 + 1.055) = 0.1105
+k4= 0.1(0.1 + 1.1105) = 0.12105
+⸻
 
+Step 3: Compute y1
+y(0.1) = 1 + (1/6)(0.1 + 2(0.11) + 2(0.1105) + 0.12105)
+       =1 + 0.11034
+       =1.11034
+       ⸻
+
+ Final Answer:
+  Approax 1.11034
 </details>
  
 
