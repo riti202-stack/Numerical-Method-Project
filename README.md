@@ -78,7 +78,7 @@
 
 
 	  ![bisection-img](./bisection.png)
-3. $\large\color{Hotpink}{\mathbf{Discussion}}$ 
+3. $\large\color{Hotpink}{\mathbf{Discussion}}$ : The Bisection Method is widely used in science and engineering to solve nonlinear equations, polynomials, and transcendental functions. In electrical engineering, it helps find operating points in circuits, while in mechanical engineering it is applied to vibrations, stress analysis, and dynamics. It is also used in control systems to determine stable parameters and in physics and chemistry to find equilibrium points and reaction constants. The method is highly reliable and stable, as it guarantees convergence if the initial interval satisfies the sign-change condition. Although its convergence is relatively slow compared to other methods, its simplicity, robustness, and predictable error control make it very effective. Overall, the Bisection Method is a dependable root-finding tool, often used as a preliminary step before applying faster numerical methods.
 
 
    
