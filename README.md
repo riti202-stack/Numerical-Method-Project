@@ -78,7 +78,7 @@
 
 
 	  ![bisection-img](./bisection.png)
-3. $\large\color{Hotpink}{\mathbf{Discussion}}$ :
+3. $\large\color{Hotpink}{\mathbf{Discussion}}$ 
 
 
    
