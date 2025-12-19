@@ -39,10 +39,18 @@
   #### Bisection Method Theory
   <details>
   <summary>Click to expand Theory</summary>
-
+	  <br>
+ 
+ ---
  
   
-  :book: $\color{green}{\textbf{Bisection Method: Theory and Application}}$
+  &nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Bisection Method: Theory and Application}}$
+
+ The *Bisection Method* is a fundamental root-finding algorithm in numerical analysis. It is a $\color{orange}{\mathbf{bracketing method}}$ used to find the real roots of a continuous function f(x) = 0.
+
+ ---
+
+ 
 
 </details>
 
