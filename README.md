@@ -451,6 +451,7 @@ y(2.5) ≈ 7.25
 ---
 
 </details>
+
 #### Newtons Backward Interpolation Method Code
 ```python
 #include <iostream>
@@ -501,8 +502,11 @@ int main() {
     fout.close();
     return 0;
 }
+
 ```
+
 #### Newtons Backward Interpolation Method Input File
+
 ```
 3 2.5
 0 1
@@ -510,7 +514,9 @@ int main() {
 2 5
 3 10
 ```
+
 #### Newtons Backward Interpolation Method Output File
+
 ```
 Estimated value at x = 2.5 is 7.25
 ```  
