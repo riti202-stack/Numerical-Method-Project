@@ -192,8 +192,8 @@ Value of y at x = 0.2 is 1.253
   <summary>Click to expand Theory</summary>
 	  <br>
  
-    &nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Newton's\ Forward\ Interpolation:\ Theory\ and\ Formula}}$
-    <br>
+     &nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Newtons Forward Interpolation Method: Theory and Application}}$
+	  <br>
     Newton's forward interpolation is a numerical method used to estimate the value of a function
     when a set of equally spaced data points is known. It is especially useful when the required
     value lies <b>near the beginning</b> of the tabulated data.
