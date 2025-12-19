@@ -32,9 +32,9 @@
   - [Interpolation Methods](#interpolation-methods)
 
     - [Newtons Forward Interpolation Method](#newtons-forward-interpolation-method)
-      - [Theory](#newtons-forward-interpolatio-method-theory)
-      - [Code](#newtons-forward-interpolatio-method-code)
-      - [input file](#newtons-forward-interpolatio-method-input-file)
+      - [Theory](#newtons-forward-interpolation-method-theory)
+      - [Code](#newtons-forward-interpolation-method-code)
+      - [input file](#newtons-forward-interpolation-method-input-file)
       - [output file](#newtons-forward-interpolation-method-output-file)
 
   ---
@@ -183,6 +183,7 @@ int main()
  For dy/dx = x^2 + y
 Value of y at x = 0.2 is 1.253
 ```
+
   # Interpolation Methods
 
   ## Newtons Forward Interpolation Method
