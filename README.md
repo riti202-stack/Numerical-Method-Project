@@ -22,6 +22,13 @@
       - [Code](#newton-raphson-method-code)
       - [input file](#newton-raphson-method-input-file)
       - [output file](#newton-raphson-method-output-file)
+ - [Ordinary Differential Equation solving Methods](#ordinary-differential-equation-solving-methods)
+
+    - [Runge Kutta Method](#runge-kutta-method)
+      - [Theory](#runge-kutta-method-theory)
+      - [Code](#runge-kutta-method-code)
+      - [input file](#runge-kutta-method-input-file)
+      - [output file](#runge-kuttan-method-output-file)
 
   ---
 
@@ -38,6 +45,21 @@
   :book: $\color{green}{\textbf{**Bisection Method: Theory and Application**}}$
 
 </details>
+
+ # Ordinary Differential Equation solving Methods
+
+  ## Runge Kutta Method
+
+  #### Runge Kutta Method Theory
+  <details>
+  <summary>Click to expand Theory</summary>
+
+ 
+  
+  :book: $\color{green}{\textbf{**Bisection Method: Theory and Application**}}$
+
+</details>
+ 
 
 
 
