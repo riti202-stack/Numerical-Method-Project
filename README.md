@@ -96,7 +96,7 @@ y(0.1) = 1 + (1/6)(0.1 + 2(0.11) + 2(0.1105) + 0.12105)
   Approax 1.11034
 </details>
 
- #### Gauss Elimination Code
+ #### Runge Kutta Method Code
 ```python
  #include <iostream>
 #include <fstream>
@@ -138,6 +138,15 @@ int main()
 
     return 0;
 }
+```
+#### Runge Kutta Method Input
+```
+ 0 1 0.1 0.2
+```
+#### Runge Kutta Method Output
+```
+ For dy/dx = x^2 + y
+Value of y at x = 0.2 is 1.253
 ```
 
 
