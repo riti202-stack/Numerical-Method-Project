@@ -115,29 +115,29 @@ $\color{Hotpink}{\mathbf{Example Problem:}}$ :
 Solve dy/dx=x+y   where,y(0)=1<br>
 Find y(0.1) using RK 4th order<br>
 
-Step 1: Given
-	•	f(x,y) = x + y
-	•	x_0 = 0, y_0 = 1
-	•	Step size h = 0.1
+Step 1: Given<br>
+	•	f(x,y) = x + y<br>
+	•	x_0 = 0, y_0 = 1<br>
+	•	Step size h = 0.1<br>
 
 ⸻
 
-Step 2: Compute k values
-k1 = 0.1(0 + 1) = 0.1
-k2= 0.1(0.05 + 1.05) = 0.11
-k3= 0.1(0.05 + 1.055) = 0.1105
-k4= 0.1(0.1 + 1.1105) = 0.12105
+Step 2: Compute k values<br>
+k1 = 0.1(0 + 1) = 0.1<br>
+k2= 0.1(0.05 + 1.05) = 0.11<br>
+k3= 0.1(0.05 + 1.055) = 0.1105<br>
+k4= 0.1(0.1 + 1.1105) = 0.12105<br>
 
 ⸻
 
-Step 3: Compute y1
-y(0.1) = 1 + (1/6)(0.1 + 2(0.11) + 2(0.1105) + 0.12105)
-       =1 + 0.11034
+Step 3: Compute y1<br>
+y(0.1) = 1 + (1/6)(0.1 + 2(0.11) + 2(0.1105) + 0.12105)<br>
+       =1 + 0.11034<br>
        =1.11034
 	   
  ⸻
 
- Final Answer:
+ Final Answer:<br>
   Approax 1.11034
 </details>
 
@@ -200,7 +200,7 @@ Value of y at x = 0.2 is 1.253
 
   #### Newtons Forward Interpolation Method Theory
  <details>
-<summary>Click to expand Theory & Example</summary>
+<summary>Click to expand Theory</summary>
 <br>
 
 ---
@@ -283,6 +283,72 @@ y(0.5) ≈ 1.25
 ---
 
 </details>
+
+
+ #### Newtons Forward Interpolation Method Code
+```python
+#include <iostream>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+ 
+void buildForwardDifferenceTable(vector<vector<double>> &fwdDiffTable, int numPoints) {
+    for(int level = 1; level <= numPoints; level++) {
+        for(int i = 0; i <= numPoints - level; i++) {
+            fwdDiffTable[i][level] = fwdDiffTable[i+1][level-1] - fwdDiffTable[i][level-1];
+        }
+    }
+}
+
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int numPoints;
+    double targetX;
+    fin >> numPoints >> targetX;
+
+    vector<double> xValues(numPoints+1), yValues(numPoints+1);
+    for(int i = 0; i <= numPoints; i++) {
+        fin >> xValues[i] >> yValues[i];
+    }
+
+    double spacing = xValues[1] - xValues[0];  
+    double p = (targetX - xValues[0]) / spacing;
+
+    
+    vector<vector<double>> fwdDiffTable(numPoints+1, vector<double>(numPoints+1, 0));
+    for(int i = 0; i <= numPoints; i++) fwdDiffTable[i][0] = yValues[i];
+    buildForwardDifferenceTable(fwdDiffTable, numPoints);
+
+    
+    double estimatedY = yValues[0];
+    double pTerm = 1;
+    for(int order = 1; order <= numPoints; order++) {
+        pTerm *= (p - (order-1));
+        estimatedY += (pTerm / tgamma(order+1)) * fwdDiffTable[0][order];  
+    }
+
+    fout << "Estimated value at x = " << targetX << " is " << estimatedY << endl;
+
+    fin.close();
+    fout.close();
+    return 0;
+}
+```
+#### Newtons Forward Interpolation Method Input File
+```
+ 3 0.5
+0 1
+1 2
+2 5
+3 10
+```
+#### Newtons Forward Interpolation Method Output File
+```
+Estimated value at x = 0.5 is 1.25
+```
 
   
     
