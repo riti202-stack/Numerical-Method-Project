@@ -81,6 +81,17 @@
 3. $\large\color{Hotpink}{\mathbf{Discussion}}$ : The Bisection Method is widely used in science and engineering to solve nonlinear equations, polynomials, and transcendental functions. In electrical engineering, it helps find operating points in circuits, while in mechanical engineering it is applied to vibrations, stress analysis, and dynamics. It is also used in control systems to determine stable parameters and in physics and chemistry to find equilibrium points and reaction constants. The method is highly reliable and stable, as it guarantees convergence if the initial interval satisfies the sign-change condition. Although its convergence is relatively slow compared to other methods, its simplicity, robustness, and predictable error control make it very effective. Overall, the Bisection Method is a dependable root-finding tool, often used as a preliminary step before applying faster numerical methods.
 
 
+| Iteration | a     | b     | c = (a+b)/2 | f(c)   | New Interval   |
+| --------- | ----- | ----- | ----------- |  ----- | -------------- |
+| 1         | 1.000 | 2.000 | 1.500       | -0.125 | [1.5, 2]       |
+| 2         | 1.500 | 2.000 | 1.750       | 1.609  | [1.5, 1.75]    |
+| 3         | 1.500 | 1.750 | 1.625       | 0.666  | [1.5, 1.625]   |
+| 4         | 1.500 | 1.625 | 1.563       | 0.252  | [1.5, 1.563]   |
+| 5         | 1.500 | 1.563 | 1.531       | 0.059  | [1.5, 1.531]   |
+| 6         | 1.500 | 1.531 | 1.516       | -0.034 | [1.516, 1.531] |
+| 7         | 1.516 | 1.531 | 1.523       | 0.012  | [1.516, 1.523] |
+
+
    
 <br>
 
