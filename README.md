@@ -139,11 +139,11 @@ int main()
     return 0;
 }
 ```
-#### Runge Kutta Method Input
+#### Runge Kutta Method Input File
 ```
  0 1 0.1 0.2
 ```
-#### Runge Kutta Method Output
+#### Runge Kutta Method Output File
 ```
  For dy/dx = x^2 + y
 Value of y at x = 0.2 is 1.253
