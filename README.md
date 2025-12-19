@@ -356,45 +356,45 @@ int main() {
 ```
 Estimated value at x = 0.5 is 1.25
 ```
-#### Newton’s Backward Interpolation Theory
+#### Newton’s Backward Interpolation Method Theory
 <details>
 <summary>Click to expand Theory</summary>
 <br>
 
 ---
 
-&nbsp;&nbsp;&nbsp;&nbsp; :book: **Newton's Backward Interpolation**
+&nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Newton's\ Backward\ Interpolation}}$
 
 Newton’s Backward Interpolation is a **numerical method** used to estimate the value of a function when the function values are known at a set of **equally spaced points**. This method is most suitable when the required value lies **near the end** of the data set.
 
-1. **When to Use**  
+1. $\color{Hotpink}{\mathbf{When\ to\ Use}}$    
     - Independent variable values are **equally spaced**.  
     - Interpolation point is **close to the last data point**.  
     - Only **discrete data values** are available (no explicit function).
 
-2. **Basic Idea**  
+2. $\color{Hotpink}{\mathbf{Basic\Idea}}$  
     - Constructs an **interpolating polynomial** using **backward differences**.  
     - Provides an approximate value of the function within the given range.
 
-3. **Notation**  
+3. $\color{Hotpink}{\mathbf{Notation}}$    
     - Data points: `(x0, y0), (x1, y1), (x2, y2), ..., (xn, yn)`  
     - Uniform spacing: `h = x1 - x0`  
     - Define: `p = (x - xn) / h`  (xn = last data point)
 
-4. **Formula**
+4. $\color{Hotpink}{\mathbf{Formula}}$  
   y = yn + pΔy_n + p(p+1)/2!Δ²y_n + p(p+1)*(p+2)/3!*Δ³y_n + …
 Where:  
 - `Δy_n` is the first backward difference  
 - `Δ²y_n` is the second backward difference  
 - Higher-order differences improve accuracy
 
-5. **Key Characteristics**  
+5. $\color{Hotpink}{\mathbf{Key\ Characteristics}}$    
     - Falls under **linear numerical interpolation methods**.  
     - Produces a **polynomial approximation**.  
     - Does **not** solve differential or non-linear equations.  
     - Accuracy increases with higher-order differences.
 
-6. **Applications**  
+6. $\color{Hotpink}{\mathbf{Applications}}$  
     - Estimating missing values in tables.  
     - Engineering and scientific computations.  
     - Data approximation in numerical analysis.  
