@@ -29,6 +29,13 @@
       - [Code](#runge-kutta-method-code)
       - [input file](#runge-kutta-method-input-file)
       - [output file](#runge-kuttan-method-output-file)
+  - [Interpolation Methods](#interpolation-methods)
+
+    - [Newtons Forward Interpolation Method](#newtons-forward-interpolation-method)
+      - [Theory](#newtons-forward-interpolatio-method-theory)
+      - [Code](#newtons-forward-interpolatio-method-code)
+      - [input file](#newtons-forward-interpolatio-method-input-file)
+      - [output file](#newtons-forward-interpolation-method-output-file)
 
   ---
 
