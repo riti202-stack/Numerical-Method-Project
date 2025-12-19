@@ -191,7 +191,77 @@ Value of y at x = 0.2 is 1.253
   <details>
   <summary>Click to expand Theory</summary>
 	  <br>
- 
+ <details>
+    <summary>Click to expand Theory</summary>
+    &nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Newton's\ Forward\ Interpolation:\ Theory\ and\ Formula}}$
+    <br>
+    Newton's forward interpolation is a numerical method used to estimate the value of a function
+    when a set of equally spaced data points is known. It is especially useful when the required
+    value lies <b>near the beginning</b> of the tabulated data. [web:22][web:23]
+    <br><br>
+    It constructs an interpolation polynomial using forward differences of the function values,
+    starting from the first point in the table. This method assumes that the x-values are
+    equally spaced with step size \(h\). [web:22]
+
+    <br><br>
+    $\color{Hotpink}{\mathbf{ Basic\ Setup:}}$ :
+    <br>
+    Suppose the function values are known at points:
+    <br>
+    \((x_0, y_0), (x_1, y_1), \dots, (x_n, y_n)\) where \(x_{k+1} - x_k = h\) (constant step size). [web:23]
+    <br>
+    To approximate \(y\) at a point \(x\) near \(x_0\), define the normalized variable:
+    <br>
+    \[
+        u = \frac{x - x_0}{h}
+    \] [web:22]
+
+    <br>
+    $\color{Hotpink}{\mathbf{ Forward\ Difference\ Table:}}$
+    <br>
+    The forward differences are defined as: [web:22]
+    <br>
+    First forward differences:
+    <br>
+    \(\Delta y_0 = y_1 - y_0,\quad \Delta y_1 = y_2 - y_1,\ \dots\)
+    <br>
+    Second forward differences:
+    <br>
+    \(\Delta^2 y_0 = \Delta y_1 - \Delta y_0,\quad \Delta^2 y_1 = \Delta y_2 - \Delta y_1,\ \dots\)
+    <br>
+    Higher-order differences are obtained similarly, forming a forward difference table. [web:22][web:27]
+
+    <br><br>
+    $\color{Hotpink}{\mathbf{ Newton's\ Forward\ Interpolation\ Formula:}}$
+    <br>
+    Using the notation above, the interpolation polynomial is:
+    <br>
+    \[
+    \begin{aligned}
+    y(x) \approx f(x) &= y_0
+    + u\,\Delta y_0
+    + \frac{u(u-1)}{2!}\,\Delta^2 y_0
+    + \frac{u(u-1)(u-2)}{3!}\,\Delta^3 y_0 \\
+    &\quad + \dots
+    + \frac{u(u-1)\dots(u-n+1)}{n!}\,\Delta^n y_0
+    \end{aligned}
+    \] [web:22][web:23]
+
+    <br>
+    Here:
+    <br>
+    • \(y_0\) is the function value at the first point \(x_0\). [web:22]<br>
+    • \(\Delta^k y_0\) is the k-th forward difference starting at \(y_0\). [web:22]<br>
+    • \(u = \dfrac{x - x_0}{h}\) is a dimensionless parameter that indicates how far x is from \(x_0\) in units of h. [web:23]
+
+    <br><br>
+    $\color{Hotpink}{\mathbf{ When\ to\ Use:}}$
+    <br>
+    • Data points must have equally spaced x-values (constant h). [web:23]<br>
+    • The required x should be close to the first tabulated point \(x_0\). [web:22]<br>
+    • If the required x is near the last point \(x_n\), Newton's backward interpolation is usually more suitable. [web:22][web:28]
+</details>
+
  
  <\details>
 
