@@ -199,29 +199,99 @@ Value of y at x = 0.2 is 1.253
   ## Newtons Forward Interpolation Method
 
   #### Newtons Forward Interpolation Method Theory
-  <details>
-  <summary>Click to expand Theory</summary>
-	   
- --
-    &nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Newtons Forward Interpolation Method: Theory and Application}}$
-	  <br>
-    Newton's forward interpolation is a numerical method used to estimate the value of a function
-    when a set of equally spaced data points is known. It is especially useful when the required
-    value lies <b>near the beginning</b> of the tabulated data.
-    <br><br>
-    It constructs an interpolation polynomial using forward differences of the function values,
-    starting from the first point in the table. This method assumes that the x-values are
-    equally spaced with step size \(h\).
+ <details>
+<summary>Click to expand Theory & Example</summary>
+<br>
 
-    <br><br>
-   $\color{Hotpink}{\mathbf{Basic Idea}}$ : 
-    <br>
-    Suppose the function values are known at points:
-    <br>
-    --
- 
- <\details>
+---
 
+&nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Newton's\ Forward\ Interpolation}}$
+
+Newton’s Forward Interpolation is a **numerical method** used to estimate the value of a function when the function values are known at a set of **equally spaced points**. This method is most suitable when the required value lies **near the beginning** of the data set.
+
+1. $\color{Hotpink}{\mathbf{When\ to\ Use}}$  
+    - Independent variable values are **equally spaced**.  
+    - Interpolation point is **close to the first data point**.  
+    - Only **discrete data values** are available (no explicit function).
+
+2. $\color{Hotpink}{\mathbf{Basic\ Idea}}$  
+    - Constructs an **interpolating polynomial** using **forward differences**.  
+    - Provides an approximate value of the function within the given range.
+
+3. $\color{Hotpink}{\mathbf{Notation}}$  
+    - Let the data points be: $(x_0, y_0), (x_1, y_1), (x_2, y_2), \dots$  
+    - Uniform spacing: $h = x_1 - x_0$  
+    - Define: $p = \frac{x - x_0}{h}$
+
+4. $\color{Hotpink}{\mathbf{Formula}}$  
+
+$$
+y = y_0 + p \Delta y_0 + \frac{p(p-1)}{2!} \Delta^2 y_0 + \frac{p(p-1)(p-2)}{3!} \Delta^3 y_0 + \dots
+$$
+
+Where:  
+- $\Delta y_0$ is the first forward difference  
+- $\Delta^2 y_0$ is the second forward difference  
+- Higher-order differences improve accuracy
+
+5. $\color{Hotpink}{\mathbf{Key\ Characteristics}}$  
+    - Falls under **linear numerical interpolation methods**.  
+    - Produces a **polynomial approximation**.  
+    - Does **not** solve differential or non-linear equations.  
+    - Accuracy increases with higher-order differences.
+
+6. $\color{Hotpink}{\mathbf{Applications}}$  
+    - Estimating missing values in tables.  
+    - Engineering and scientific computations.  
+    - Data approximation in numerical analysis.  
+    - Pre-processing for curve fitting.
+
+---
+
+### :pencil2: Example
+
+Given the data:
+
+| x | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+| y | 1 | 2 | 5 | 10 |
+
+Find \(y\) at \(x = 0.5\).
+
+**Step 1: Difference Table**
+
+| x | y | Δy | Δ²y |
+|---|---|----|----|
+| 0 | 1 | 1 | 2 |
+| 1 | 2 | 3 | 2 |
+| 2 | 5 | 5 |   |
+| 3 | 10 |   |   |
+
+**Step 2: Compute \(p\)**
+
+$$
+h = 1,\quad x_0 = 0,\quad p = \frac{0.5 - 0}{1} = 0.5
+$$
+
+**Step 3: Apply Newton’s Forward Formula**
+
+$$
+\begin{aligned}
+y &= y_0 + p \Delta y_0 + \frac{p(p-1)}{2} \Delta^2 y_0 \\
+&= 1 + (0.5)(1) + \frac{0.5(-0.5)}{2}(2) \\
+&= 1 + 0.5 - 0.25 \\
+&= 1.25
+\end{aligned}
+$$
+
+**Final Answer:**  
+$$
+\boxed{y(0.5) \approx 1.25}
+$$
+
+---
+
+</details>
 
   
     
