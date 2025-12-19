@@ -51,8 +51,9 @@
   ## Runge Kutta Method
 
   #### Runge Kutta Method Theory
-    <summary>Click to expand Theory</summary>
+    
   <details>
+    <summary>Click to expand Theory</summary>
 The Runge–Kutta methods are numerical techniques used to solve ordinary differential equations (ODEs).The 4th-order Runge-Kutta method (RK4) is the most commonly used and provides a good balance between accuracy and computational efficiency.It can solve of the form:
     dy/dx= f(x,y),   y(x0)=y0
 Instead of using only the slope at one point, RK methods take several slope estimates within the step and combine them to get a more accurate result.
