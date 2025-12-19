@@ -451,7 +451,69 @@ y(2.5) ≈ 7.25
 ---
 
 </details>
-  
+#### Newtons Backward Interpolation Method Code
+```python
+#include <iostream>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+ 
+void buildBackwardDifferenceTable(vector<vector<double>> &bwdDiffTable, int numPoints) {
+    for(int order = 1; order <= numPoints; order++) {
+        for(int i = numPoints; i >= order; i--) {
+            bwdDiffTable[i][order] = bwdDiffTable[i][order-1] - bwdDiffTable[i-1][order-1];
+        }
+    }
+}
+
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int numPoints;
+    double targetX;
+    fin >> numPoints >> targetX;
+
+    vector<double> xValues(numPoints+1), yValues(numPoints+1);
+    for(int i = 0; i <= numPoints; i++) {
+        fin >> xValues[i] >> yValues[i];
+    }
+
+    double spacing = xValues[1] - xValues[0]; 
+    double p = (targetX - xValues[numPoints]) / spacing; 
+    
+    vector<vector<double>> bwdDiffTable(numPoints+1, vector<double>(numPoints+1, 0));
+    for(int i = 0; i <= numPoints; i++) bwdDiffTable[i][0] = yValues[i];
+    buildBackwardDifferenceTable(bwdDiffTable, numPoints);
+
+    
+    double estimatedY = yValues[numPoints];
+    double pTerm = 1;
+    for(int order = 1; order <= numPoints; order++) {
+        pTerm *= (p + (order-1));
+        estimatedY += (pTerm / tgamma(order+1)) * bwdDiffTable[numPoints][order]; 
+    }
+
+    fout << "Estimated value at x = " << targetX << " is " << estimatedY << endl;
+
+    fin.close();
+    fout.close();
+    return 0;
+}
+```
+#### Newtons Backward Interpolation Method Input File
+```
+3 2.5
+0 1
+1 2
+2 5
+3 10
+```
+#### Newtons Backward Interpolation Method Output File
+```
+Estimated value at x = 2.5 is 7.25
+```  
     
     
   
