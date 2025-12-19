@@ -48,6 +48,21 @@
 
  The *Bisection Method* is a fundamental root-finding algorithm in numerical analysis. It is a $\color{orange}{\mathbf{bracketing method}}$ used to find the real roots of a continuous function f(x) = 0.
 
+ 1. $\color{Hotpink}{\mathbf{Mathematical Principle}}$ : The method is based on the $\color{orange}{\mathbf{Intermediate Value Theorem (IVT)}}$.
+
+    - $\color{red}{\mathbf{Theorem}}$: If a continuous function f(x) on a closed interval [a,b] satisfies f(a)*f(b) < 0 (meaning the signs of f(a) and f(b) are opposite), then there exists at least one value c in (a, b) such that f(c) = 0.
+
+ 2. $\color{Hotpink}{\mathbf{The Algorithm}}$ : The Bisection Method repeatedly halves the interval and checks which sub-interval contains the root.
+
+   - Initialization: Choose an interval [a,b] such that f(a)* f(b) < 0.
+   - Bisection: Calculate the midpoint $m$:$$m = \frac{a + b}{2}
+   - Sign Check:
+     - If f(m) = 0, then m is the root.
+     - If f(a)*f(m) < 0, the root lies in [a,m]. Set b = m
+     - If f(m)*f(b) < 0, the root lies in [m, b]. Set a = m.
+   - Repeat: Continue steps 2 and 3 until the interval width $|b - a|$ is smaller than the desired tolerance $\epsilon$.
+ 
+
  ---
 
  
