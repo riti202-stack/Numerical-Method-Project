@@ -25,16 +25,17 @@
 
   ---
 
-  ### Nonlinear Equation solving Methods
+  # Nonlinear Equation solving Methods
 
-  ### Bisection Method
+  ## Bisection Method
 
   #### Bisection Method Theory
   <details>
   <summary>Click to expand Theory</summary>
 
  
-Bisection Method: Theory and Application
+  
+  :book: $\color{green}{\textbf{**Bisection Method: Theory and Application**}}$
 
 </details>
 
