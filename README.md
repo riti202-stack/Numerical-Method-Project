@@ -22,6 +22,9 @@
       - [Code](#newton-raphson-method-code)
       - [input file](#newton-raphson-method-input-file)
       - [output file](#newton-raphson-method-output-file)
+        
+ - [Linear Equation Solving System](#linear-equation-solving-system)
+    - [LU Decomposition](#lu-decomposition)
  - [Ordinary Differential Equation solving Methods](#ordinary-differential-equation-solving-methods)
 
     - [Runge Kutta Method](#runge-kutta-method)
