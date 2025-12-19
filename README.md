@@ -356,7 +356,90 @@ int main() {
 ```
 Estimated value at x = 0.5 is 1.25
 ```
+#### Newton’s Backward Interpolation Theory
+<details>
+<summary>Click to expand Theory</summary>
+<br>
 
+---
+
+&nbsp;&nbsp;&nbsp;&nbsp; :book: **Newton's Backward Interpolation**
+
+Newton’s Backward Interpolation is a **numerical method** used to estimate the value of a function when the function values are known at a set of **equally spaced points**. This method is most suitable when the required value lies **near the end** of the data set.
+
+1. **When to Use**  
+    - Independent variable values are **equally spaced**.  
+    - Interpolation point is **close to the last data point**.  
+    - Only **discrete data values** are available (no explicit function).
+
+2. **Basic Idea**  
+    - Constructs an **interpolating polynomial** using **backward differences**.  
+    - Provides an approximate value of the function within the given range.
+
+3. **Notation**  
+    - Data points: `(x0, y0), (x1, y1), (x2, y2), ..., (xn, yn)`  
+    - Uniform spacing: `h = x1 - x0`  
+    - Define: `p = (x - xn) / h`  (xn = last data point)
+
+4. **Formula**
+  y = yn + pΔy_n + p(p+1)/2!Δ²y_n + p(p+1)*(p+2)/3!*Δ³y_n + …
+Where:  
+- `Δy_n` is the first backward difference  
+- `Δ²y_n` is the second backward difference  
+- Higher-order differences improve accuracy
+
+5. **Key Characteristics**  
+    - Falls under **linear numerical interpolation methods**.  
+    - Produces a **polynomial approximation**.  
+    - Does **not** solve differential or non-linear equations.  
+    - Accuracy increases with higher-order differences.
+
+6. **Applications**  
+    - Estimating missing values in tables.  
+    - Engineering and scientific computations.  
+    - Data approximation in numerical analysis.  
+    - Pre-processing for curve fitting.
+
+---
+
+### :pencil2: Example
+
+Given the data:
+
+| x | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+| y | 1 | 2 | 5 | 10 |
+
+Find `y` at `x = 2.5`.
+
+**Step 1: Backward Difference Table**
+
+| x | y | Δy | Δ²y |
+|---|---|----|----|
+| 0 | 1 |   |   |
+| 1 | 2 |   |   |
+| 2 | 5 | 3 | 2 |
+| 3 | 10 | 5 | 2 |
+
+**Step 2: Compute `p`**
+h = 1, xn = 3<br>
+p = (2.5 - 3)/1 = -0.5
+
+**Step 3: Apply Newton’s Backward Formula**
+
+y = yn + pΔy_n + p(p+1)/2 * Δ²y_n<br>
+y = 10 + (-0.5)5 + (-0.50.5)/2*2<br>
+y = 10 - 2.5 + (-0.25/2)*2<br>
+y = 10 - 2.5 - 0.25<br>
+y = 7.25
+
+**Final Answer:**
+
+y(2.5) ≈ 7.25
+
+---
+
+</details>
   
     
     
