@@ -42,7 +42,7 @@
 
  
   
-  :book: $\color{green}{\textbf{**Bisection Method: Theory and Application**}}$
+  :book: $\color{green}{\textbf{Bisection Method: Theory and Application}}$
 
 </details>
 
