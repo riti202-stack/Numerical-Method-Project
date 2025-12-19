@@ -178,7 +178,17 @@ int main()
  For dy/dx = x^2 + y
 Value of y at x = 0.2 is 1.253
 ```
+  # Interpolation Methods
 
+  ## Newtons Forward Interpolation Method
+
+  #### Newtons Forward Interpolation Method Theory
+  <details>
+  <summary>Click to expand Theory</summary>
+	  <br>
+ 
+ 
+ <\details>
 
 
   
