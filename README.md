@@ -267,14 +267,14 @@ Find \(y\) at \(x = 0.5\).
 
 **Step 2: Compute \(p\)**
 
-h = 1, x0 = 0
+h = 1, x0 = 0<br>
 p = (0.5 - 0)/1 = 0.5
 
 **Step 3: Apply Newton’s Forward Formula**
 
-y = y0 + pΔy0 + p(p-1)/2 * Δ²y0
-y = 1 + (0.5)1 + (0.5(-0.5)/2)*2
-y = 1 + 0.5 - 0.25
+y = y0 + pΔy0 + p(p-1)/2 * Δ²y0<br>
+y = 1 + (0.5)1 + (0.5(-0.5)/2)*2<br>
+y = 1 + 0.5 - 0.25<br>
 y = 1.25
 
 **Final Answer:**  
