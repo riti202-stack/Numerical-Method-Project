@@ -225,9 +225,7 @@ Newton’s Forward Interpolation is a **numerical method** used to estimate the 
 
 4. $\color{Hotpink}{\mathbf{Formula}}$  
 
-$$
-y = y_0 + p \Delta y_0 + \frac{p(p-1)}{2!} \Delta^2 y_0 + \frac{p(p-1)(p-2)}{3!} \Delta^3 y_0 + \dots
-$$
+y = y0 + pΔy0 + p(p-1)/2!Δ²y0 + p(p-1)*(p-2)/3!*Δ³y0 + …
 
 Where:  
 - $\Delta y_0$ is the first forward difference  
@@ -269,25 +267,18 @@ Find \(y\) at \(x = 0.5\).
 
 **Step 2: Compute \(p\)**
 
-$$
-h = 1,\quad x_0 = 0,\quad p = \frac{0.5 - 0}{1} = 0.5
-$$
+h = 1, x0 = 0
+p = (0.5 - 0)/1 = 0.5
 
 **Step 3: Apply Newton’s Forward Formula**
 
-$$
-\begin{aligned}
-y &= y_0 + p \Delta y_0 + \frac{p(p-1)}{2} \Delta^2 y_0 \\
-&= 1 + (0.5)(1) + \frac{0.5(-0.5)}{2}(2) \\
-&= 1 + 0.5 - 0.25 \\
-&= 1.25
-\end{aligned}
-$$
+y = y0 + pΔy0 + p(p-1)/2 * Δ²y0
+y = 1 + (0.5)1 + (0.5(-0.5)/2)*2
+y = 1 + 0.5 - 0.25
+y = 1.25
 
 **Final Answer:**  
-$$
-\boxed{y(0.5) \approx 1.25}
-$$
+y(0.5) ≈ 1.25
 
 ---
 
