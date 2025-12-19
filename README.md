@@ -38,10 +38,10 @@
       - [output file](#newtons-forward-interpolation-method-output-file)
         
      - [Newtons Backward Interpolation Method](#newtons-backward-interpolation-method)
-      - [Theory](#newtons-backward-interpolation-method-theory)
-      - [Code](#newtons-backward-interpolation-method-code)
-      - [input file](#newtons-backward-interpolation-method-input-file)
-      - [output file](#newtons-backward-interpolation-method-output-file)
+       - [Theory](#newtons-backward-interpolation-method-theory)
+       - [Code](#newtons-backward-interpolation-method-code)
+       - [input file](#newtons-backward-interpolation-method-input-file)
+       - [output file](#newtons-backward-interpolation-method-output-file)
 
   ---
 
