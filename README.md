@@ -1387,7 +1387,7 @@ Approximate integral value is 6
 Simpson’s 3/8 Rule is a numerical method used to approximate the definite integral of a function. It is based on approximating the integrand by a cubic polynomial that passes through four equally spaced points.
 
 1. $\color{Hotpink}{\mathbf{When\ to\ Use}}$  
-    - When you want to approximate an integral \(\int_a^b f(x) dx\).  
+    - When you want to approximate an  Integral of f(x) from a to b: ∫ₐᵇ f(x) dx.  
     - The interval \([a, b]\) is divided into \(n\) sub-intervals, where \(n\) is a multiple of 3.  
     - Function values are known at equally spaced points.
 
