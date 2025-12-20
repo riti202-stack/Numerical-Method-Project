@@ -24,7 +24,30 @@
       - [output file](#newton-raphson-method-output-file)
         
  - [Linear Equation Solving System](#linear-equation-solving-system)
-    - [LU Decomposition](#lu-decomposition)
+    - [LU Decomposition Method](#lu-decomposition)
+       - [Theory](#lu-decomposition-theory)
+       - [Code](#lu-decomposition-code)
+       - [Input file](#lu-decomposition-input)
+       - [Output file](#lu-decomposition-theory)
+     - [Gauss Elimination Method](#gauss-elimination)
+        - [Theory](#gauss-elimination-theory)
+        - [Code](#lgauss-elimination-code)
+        - [Input file](#gauss-elimination-input)
+        - [Output file](#gauss-elimination-output)
+      - [Gauss Jordan Elimination Mrthod](#gauss-jordan-elimonation)
+         - [Theory](#gauss-jordan-elimination-theory)
+         - [Code](#gauss-jordan-elimination-code)
+         - [Input file](#gauss-jordan-elimination-input)
+         - [Output file](#gauss-jordan-elimination-output)
+
+      - [Matrix Inversion](#matrix-inversion)
+         - [Theory](#matrix-inversion-theory)
+         - [Code](#matrix-inversion-theory)
+         - [Input file](#matrix-inversion-theory)
+         - [Output file](#matrix-inversion-theory)
+
+---
+ 
  - [Ordinary Differential Equation solving Methods](#ordinary-differential-equation-solving-methods)
 
     - [Runge Kutta Method](#runge-kutta-method)
