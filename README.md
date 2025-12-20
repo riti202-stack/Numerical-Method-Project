@@ -53,44 +53,44 @@
     - [Runge Kutta Method](#runge-kutta-method)
       - [Theory](#runge-kutta-method-theory)
       - [Code](#runge-kutta-method-code)
-      - [input file](#runge-kutta-method-input-file)
-      - [output file](#runge-kutta-method-output-file)
+      - [input file](#runge-kutta-method-input)
+      - [output file](#runge-kutta-method-output)
   - [Interpolation Methods](#interpolation-methods)
 
     - [Newtons Forward Interpolation Method](#newtons-forward-interpolation-method)
       - [Theory](#newtons-forward-interpolation-method-theory)
       - [Code](#newtons-forward-interpolation-method-code)
-      - [input file](#newtons-forward-interpolation-method-input-file)
-      - [output file](#newtons-forward-interpolation-method-output-file)
+      - [input file](#newtons-forward-interpolation-method-input)
+      - [output file](#newtons-forward-interpolation-method-output)
         
      - [Newtons Backward Interpolation Method](#newtons-backward-interpolation-method)
        - [Theory](#newtons-backward-interpolation-method-theory)
        - [Code](#newtons-backward-interpolation-method-code)
-       - [input file](#newtons-backward-interpolation-method-input-file)
-       - [output file](#newtons-backward-interpolation-method-output-file)
+       - [input file](#newtons-backward-interpolation-method-input)
+       - [output file](#newtons-backward-interpolation-method-output)
       - [Newtons Divided Difference Interpolation Method](#newtons-divided-difference-interpolation-method)
         - [Theory](#newtons-divided-difference-interpolation-method-theory)
         - [Code](#newtons-divided-difference-interpolation-method-code)
-        - [input file](#newtons-divided-difference-interpolation-method-input-file)
-        - [output file](#newtons-divided-difference-interpolation-method-output-file)
+        - [input file](#newtons-divided-difference-interpolation-method-input)
+        - [output file](#newtons-divided-difference-interpolation-method-output)
  - [Neumerical Differentiation solving Methods](#numerical-differentiation-solving-methods)
 
     - [Neumerical Differentiation By Forward Interpolation Method](#neumerical-differentiation-by-forward-interpolation-method)
       - [Theory](#neumerical-differentiation-by-forward-interpolation-method-theory)
       - [Code](#neumerical-differentiation-by-forward-interpolation-method-code)
-      - [input file](#neumerical-differentiation-by-forward-interpolation-method-input-file)
-      - [output file](#neumerical-differentiation-by-forward-interpolation-method-output-file)
+      - [input file](#neumerical-differentiation-by-forward-interpolation-method-input)
+      - [output file](#neumerical-differentiation-by-forward-interpolation-method-output)
      - [Neumerical Differentiation By Backward Interpolation Method](#neumerical-differentiation-by-backward-interpolation-method)
        - [Theory](#neumerical-differentiation-by-backward-interpolation-method-theory)
        - [Code](#neumerical-differentiation-by-backward-interpolation-method-code)
-       - [input file](#neumerical-differentiation-by-backward-interpolation-method-input-file)
-       - [output file](#neumerical-differentiation-by-backward-interpolation-method-output-file)
+       - [input file](#neumerical-differentiation-by-backward-interpolation-method-input)
+       - [output file](#neumerical-differentiation-by-backward-interpolation-method-output)
 - [Solution of Numerical Integrations](#solution-of-numerical-integrations)
   - [Simpsons One-Third Rule](#simpsons-one-third-rule)
     - [Theory](#simpsons-one-third-rule-theory)
     - [Code](#simpsons-one-third-rule-code)
-    - [Input](#simpsons-one-third-rule-input-file)
-    - [Output](#simpsons-one-third-rule-output-file)
+    - [Input](#simpsons-one-third-rule-input)
+    - [Output](#simpsons-one-third-rule-output)
   - [Simpsons Three-Eighths Rule](#simpsons-three-eighths-rule)
     - [Theory](#simpsons-three-eighths-rule-theory)
     - [Code](#simpsons-three-eighths-rule-code)
@@ -407,11 +407,11 @@ int main()
     return 0;
 }
 ```
-#### Runge Kutta Method Input File
+#### Runge Kutta Method Input
 ```
  0 1 0.1 0.2
 ```
-#### Runge Kutta Method Output File
+#### Runge Kutta Method Output
 ```
  For dy/dx = x^2 + y
 Value of y at x = 0.2 is 1.253
@@ -560,7 +560,7 @@ int main() {
     return 0;
 }
 ```
-#### Newtons Forward Interpolation Method Input File
+#### Newtons Forward Interpolation Method Input
 ```
  3 0.5
 0 1
@@ -568,7 +568,7 @@ int main() {
 2 5
 3 10
 ```
-#### Newtons Forward Interpolation Method Output File
+#### Newtons Forward Interpolation Method Output
 ```
 Estimated value at x = 0.5 is 1.25
 ```
@@ -710,7 +710,7 @@ int main() {
 
 ```
 
-#### Newtons Backward Interpolation Method Input File
+#### Newtons Backward Interpolation Method Input
 
 ```
 3 2.5
@@ -720,7 +720,7 @@ int main() {
 3 10
 ```
 
-#### Newtons Backward Interpolation Method Output File
+#### Newtons Backward Interpolation Method Output
 
 ```
 Estimated value at x = 2.5 is 7.25
@@ -865,7 +865,7 @@ int main() {
 }
 
 ```
-#### Newtons Divided Difference Interpolation Method Input File
+#### Newtons Divided Difference Interpolation Method Input
 ```
 3
 1 1
@@ -874,7 +874,7 @@ int main() {
 3
 
 ```
-#### Newtons Divided Difference Interpolation Method Output File
+#### Newtons Divided Difference Interpolation Method Output
 ```
 Interpolated value at x = 3 is 9
 
@@ -1043,7 +1043,7 @@ int main() {
 
 
 ```
-#### Neumerical Differentiation By Forward Interpolation Method Input File
+#### Neumerical Differentiation By Forward Interpolation Method Input
 ```
 4
 0 1
@@ -1053,7 +1053,7 @@ int main() {
 
 
 ```
-#### Neumerical Differentiation By Forward Interpolation Method Output File
+#### Neumerical Differentiation By Forward Interpolation Method Output
 ```
 Approximate derivative at x = 0 is 0
 
@@ -1213,7 +1213,7 @@ int main() {
 }
 
 ```
-#### Neumerical Differentiation By Backward Interpolation Method Input File
+#### Neumerical Differentiation By Backward Interpolation Method Input
 ```
 4
 0 1
@@ -1224,7 +1224,7 @@ int main() {
 
 
 ```
-#### Neumerical Differentiation By Backward Interpolation Method Output File
+#### Neumerical Differentiation By Backward Interpolation Method Output
 ```
 Approximate derivative at x = 3 is 6
 
@@ -1361,14 +1361,14 @@ int main() {
 }
 
 ```
-#### Simpsons One-Third Rule Input File
+#### Simpsons One-Third Rule Input
 ```
  4
 0 2
 1 1.125 2 4.375 9
 
 ```
-####  Simpsons One-Third Rule Output File
+####  Simpsons One-Third Rule Output
 ```
 Approximate integral value is 6
 
