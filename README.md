@@ -1361,14 +1361,14 @@ int main() {
 }
 
 ```
-### Simpsons One-Third Rule Input File
+#### Simpsons One-Third Rule Input File
 ```
  4
 0 2
 1 1.125 2 4.375 9
 
 ```
-###  Simpsons One-Third Rule Output File
+####  Simpsons One-Third Rule Output File
 ```
 Approximate integral value is 6
 
