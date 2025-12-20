@@ -1048,7 +1048,7 @@ int main() {
 Approximate derivative at x = 0 is 0
 
 ``` 
-### Numerical Differentiation By Backward Interpolation Method Theory
+#### Neumerical Differentiation By Backward Interpolation Method Theory
 <details>
 <summary>Click to expand Theory</summary>
 <br>
