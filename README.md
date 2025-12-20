@@ -69,10 +69,10 @@
        - [input file](#newtons-backward-interpolation-method-input-file)
        - [output file](#newtons-backward-interpolation-method-output-file)
       - [Newtons Divided Difference Interpolation Method](#newtons-divided-difference-interpolation-method)
-       - [Theory](#newtons-divided-difference-interpolation-method-theory)
-       - [Code](#newtons-divided-difference-interpolation-method-code)
-       - [input file](#newtons-divided-difference-interpolation-method-input-file)
-       - [output file](#newtons-divided-difference-interpolation-method-output-file)
+        - [Theory](#newtons-divided-difference-interpolation-method-theory)
+        - [Code](#newtons-divided-difference-interpolation-method-code)
+        - [input file](#newtons-divided-difference-interpolation-method-input-file)
+        - [output file](#newtons-divided-difference-interpolation-method-output-file)
 
   ---
 
@@ -733,12 +733,12 @@ Newton’s Divided Difference Interpolation is a **numerical method** used to es
 
 4. $\color{Hotpink}{\mathbf{Formula}}$  
 
-\[
+\
 P(x) = f[x_0]
 + (x - x_0)f[x_0, x_1]
 + (x - x_0)(x - x_1)f[x_0, x_1, x_2]
-+ \dots
-\]
++ ....
+  
 
 Where:  
 - $f[x_0, x_1] = \dfrac{f(x_1) - f(x_0)}{x_1 - x_0}$  
@@ -778,15 +778,15 @@ Find \(y\) at \(x = 3\).
 
 **Step 2: Construct the Polynomial**
 
-\[
+\
 P(x) = 1 + (x - 1)3 + (x - 1)(x - 2)1
-\]
+\
 
 **Step 3: Evaluate at \(x = 3\)**
 
-\[
+\
 P(3) = 1 + (2)3 + (2)(1) = 9
-\]
+\
 
 **Final Answer:**  
 y(3) ≈ 9
