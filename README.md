@@ -1256,9 +1256,9 @@ Simpson’s 1/3 Rule is a **numerical integration method** used to approximate t
 3. $\color{Hotpink}{\mathbf{Notation}}$  
    - \(a, b\): Limits of integration  
    - \(n\): Number of subintervals (must be even)  
-   - \(h = \frac{b - a}{n}\): Width of each subinterval  
-   - \(x_i = a + i \times h\), for \(i = 0, 1, 2, ..., n\)  
-   - \(f(x_i)\): Function value at \(x_i\)
+   - h = (b - a) / n: Width of each subinterval  
+   -x_i = a + i × h, for \(i = 0, 1, 2, ..., n\)  
+   - f(x_i): Function value at \(x_i\)
 
 4. $\color{Hotpink}{\mathbf{Formula}}$  
 
@@ -1284,7 +1284,7 @@ Where:
 
 ### :pencil2: Example
 
-Calculate \(\int_0^2 (1 + x^3) dx\) using Simpson’s 1/3 rule with \(n=4\).
+Calculate ∫₀² (1 + x³) dx using Simpson’s 1/3 rule with \(n=4\).
 
 | i | x_i | f(x_i) = 1 + (x_i)^3 |
 |---|-----|-----------------------|
