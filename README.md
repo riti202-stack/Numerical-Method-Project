@@ -864,6 +864,114 @@ int main() {
 Interpolated value at x = 3 is 9
 
 ```
-    
+
+# Neumerical Differentiation solving Methods 
+## Neumerical Differentiation By Forward Interpolation Method
+### Neumerical Differentiation By Forward Interpolation Method Theory
+
+ 
+<details>
+<summary>Click to expand Theory</summary>
+<br>
+
+---
+
+&nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Numerical\ Differentiation\ using\ Newton's\ Forward\ Interpolation}}$
+
+Numerical Differentiation using Newton’s Forward Interpolation is a **numerical technique** used to approximate the **derivative of a function** when only **tabulated data** at **equally spaced points** is available. This method is most suitable when the required derivative is needed **near the beginning** of the data set.
+
+1. $\color{Hotpink}{\mathbf{When\ to\ Use}}$  
+    - Data points are **equally spaced**.  
+    - Derivative is required **near the first data point**.  
+    - Function is known only through **discrete values**.
+
+2. $\color{Hotpink}{\mathbf{Basic\ Idea}}$  
+    - Start with **Newton’s Forward Interpolation Polynomial**.  
+    - Differentiate the polynomial **with respect to x**.  
+    - Obtain formulas for first and higher-order derivatives.
+
+3. $\color{Hotpink}{\mathbf{Notation}}$  
+    - Data points: $(x_0, y_0), (x_1, y_1), (x_2, y_2), \dots$  
+    - Step size: $h = x_1 - x_0$  
+    - Parameter: $p = \frac{x - x_0}{h}$  
+    - $\Delta y_0, \Delta^2 y_0, \Delta^3 y_0, \dots$ are forward differences
+
+4. $\color{Hotpink}{\mathbf{Newton’s\ Forward\ Interpolation\ Formula}}$  
+
+\[
+y = y_0 + p\Delta y_0 + \frac{p(p-1)}{2!}\Delta^2 y_0
++ \frac{p(p-1)(p-2)}{3!}\Delta^3 y_0 + \dots
+\]
+
+5. $\color{Hotpink}{\mathbf{First\ Derivative\ Formula}}$  
+
+By differentiating the above equation:
+
+\[
+\left(\frac{dy}{dx}\right)_{x=x_0}
+= \frac{1}{h}
+\left[
+\Delta y_0
+- \frac{1}{2}\Delta^2 y_0
++ \frac{1}{3}\Delta^3 y_0
+- \dots
+\right]
+\]
+
+6. $\color{Hotpink}{\mathbf{Key\ Characteristics}}$  
+    - Based on **forward differences**.  
+    - Accuracy improves with **more data points**.  
+    - Best suited for **initial-region differentiation**.  
+    - Simple and efficient for tabulated data.
+
+7. $\color{Hotpink}{\mathbf{Applications}}$  
+    - Estimating velocity and acceleration from position data.  
+    - Engineering and physics problems.  
+    - Scientific data analysis.  
+    - Numerical methods and computation labs.
+
+---
+
+### :pencil2: Example
+
+Given the data:
+
+| x | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+| y | 1 | 2 | 5 | 10 |
+
+Find the first derivative at \(x = 0\).
+
+**Step 1: Forward Difference Table**
+
+| x | y | Δy | Δ²y |
+|---|---|----|----|
+| 0 | 1 | 1 | 2 |
+| 1 | 2 | 3 | 2 |
+| 2 | 5 | 5 |   |
+| 3 |10 |   |   |
+
+**Step 2: Identify values**
+
+\
+h = 1,\quad \Delta y_0 = 1,\quad \Delta^2 y_0 = 2
+\
+
+**Step 3: Apply differentiation formula**
+
+\
+\left(\frac{dy}{dx}\right)_{x=0}
+= \frac{1}{1}\left(1 - \frac{1}{2}\times 2\right)
+= 0
+\
+
+**Final Answer:**  
+\
+\left(\frac{dy}{dx}\right)_{x=0} \approx 0
+\
+
+---
+
+</details>
   
   
