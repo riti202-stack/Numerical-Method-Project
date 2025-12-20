@@ -898,25 +898,19 @@ Numerical Differentiation using Newton’s Forward Interpolation is a **numerica
 
 4. $\color{Hotpink}{\mathbf{Newton’s\ Forward\ Interpolation\ Formula}}$  
 
-\[
-y = y_0 + p\Delta y_0 + \frac{p(p-1)}{2!}\Delta^2 y_0
-+ \frac{p(p-1)(p-2)}{3!}\Delta^3 y_0 + \dots
-\]
+y = y0 + pΔy0<br>
+    + [p(p − 1) / 2!] Δ²y0<br>
+    + [p(p − 1)(p − 2) / 3!] Δ³y0<br>
+    + ...<br>
+
 
 5. $\color{Hotpink}{\mathbf{First\ Derivative\ Formula}}$  
 
 By differentiating the above equation:
 
-\[
-\left(\frac{dy}{dx}\right)_{x=x_0}
-= \frac{1}{h}
-\left[
-\Delta y_0
-- \frac{1}{2}\Delta^2 y_0
-+ \frac{1}{3}\Delta^3 y_0
-- \dots
-\right]
-\]
+(dy/dx) at x = x0<br>
+= (1/h) * [ Δy0 - (1/2)Δ²y0 + (1/3)Δ³y0 - ... ]<br>
+
 
 6. $\color{Hotpink}{\mathbf{Key\ Characteristics}}$  
     - Based on **forward differences**.  
@@ -953,22 +947,19 @@ Find the first derivative at \(x = 0\).
 
 **Step 2: Identify values**
 
-\[
-h = 1,\quad \Delta y_0 = 1,\quad \Delta^2 y_0 = 2
-\]
+h = 1,    Δy₀ = 1,    Δ²y₀ = 2
+
 
 **Step 3: Apply differentiation formula**
 
-\[
-\left(\frac{dy}{dx}\right)_{x=0}
-= \frac{1}{1}\left(1 - \frac{1}{2}\times 2\right)
-= 0
-\]
+(dy/dx) at x = 0<br> 
+= (1/1) * (1 - (1/2) × 2)<br> 
+= 0<br>
+
 
 **Final Answer:**  
-\[
-\left(\frac{dy}{dx}\right)_{x=0} \approx 0
-\]
+(dy/dx) at x = 0 ≈ 0
+
 
 ---
 
