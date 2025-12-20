@@ -1525,90 +1525,96 @@ Approximate integral value is 20.25
 
 ### Least Square Regression Method For Linear Equations Theory
  
+ 
 <details>
 <summary>Click to expand Theory</summary>
 <br>
 
 ---
 
-&nbsp;&nbsp;&nbsp;&nbsp; :book: **Least Square Regression Method**
+&nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Least\ Square\ Regression\ Method}}$
 
-Least Square Regression is a statistical method used to find the best-fitting line through a set of data points by minimizing the sum of the squares of the vertical distances of the points from the line. It is commonly used to model the relationship between two variables \(x\) and \(y\) with a linear equation of the form \(y = mx + c\).
+Least Square Regression is used to fit a straight line of the form:y = a + b * x
 
-1. **When to Use**  
-   - To find the linear relationship between two variables.  
-   - When data points do not perfectly fit a line due to errors or variability.  
-   - To predict values of \(y\) for given \(x\) using the regression line.
+to a set of data points \((x_i, y_i)\), minimizing the sum of the squares of the vertical deviations between data points and the line.
 
-2. **Basic Idea**  
-   - Minimize the sum of the squares of the residuals (differences between observed and predicted \(y\)).  
-   - Derive formulas for slope \(m\) and intercept \(c\) that minimize this sum.
+1. $\color{Hotpink}{\mathbf{When\ to\ Use}}$  
+   - When you want to find a **linear relationship** between variables \(x\) and \(y\).  
+   - When data points have **some scatter** and do not fit perfectly.  
+   - To predict \(y\) values given new \(x\).
 
-3. **Notation**  
-   - Data points: \((x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)\)  
-   - \(n\) is the number of data points.
+2. $\color{Hotpink}{\mathbf{Basic\ Idea}}$  
+   - Minimize the sum of squared residuals \(\sum (y_i - (a + b x_i))^2\).  
+   - Derive formulas for \(a\) and \(b\) that best fit the data.
 
-4. **Formulas**  
+3. $\color{Hotpink}{\mathbf{Notation}}$  
+   - Given \(n\) points: \((x_1,y_1), (x_2,y_2), \dots, (x_n,y_n)\).  
+   - Define sums:  
+     ```
+     S_x = Σ x_i
+     S_y = Σ y_i
+     S_{x^2} = Σ x_i^2
+     S_{xy} = Σ x_i y_i
+     ```
 
-- Slope \(m\):
-  m = [ n * Σ(x_i * y_i) - Σx_i * Σy_i ] / [ n * Σ(x_i^2) - (Σx_i)^2 ]
-  
-- Intercept \(c\):
+4. $\color{Hotpink}{\mathbf{Formulas}}$ (in plain text)  
 
-c = (Σy_i - m * Σx_i) / n
+Slope \(b\):
 
-- Regression line equation:
+b = ( n * S_{xy} - S_x * S_y ) / ( n * S_{x^2} - (S_x)^2 )
 
-y = m * x + c
+Intercept \(a\):
 
-5. **Key Characteristics**  
-   - Provides the line of best fit minimizing squared errors.  
-   - Assumes a linear relationship between \(x\) and \(y\).  
+a = ( S_y - b * S_x ) / n
+
+Regression line:
+
+y = a + b * x
+
+5. $\color{Hotpink}{\mathbf{Key\ Characteristics}}$  
+   - Produces a **line of best fit** minimizing squared errors.  
+   - Assumes **linear dependence** of \(y\) on \(x\).  
    - Sensitive to outliers.
 
-6. **Applications**  
-   - Predicting trends and forecasting.  
-   - Engineering data analysis.  
-   - Economics and social sciences.  
-   - Any scenario requiring linear modeling.
+6. $\color{Hotpink}{\mathbf{Applications}}$  
+   - Trend estimation and prediction.  
+   - Engineering and scientific modeling.  
+   - Economics, biology, and social sciences.
 
 ---
 
 ### :pencil2: Example
 
-Given the data:
+Given data:
 
 | x | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|---|
 | y | 2 | 4 | 5 | 4 | 5 |
 
-Find the regression line \(y = mx + c\).
+Calculate sums:
 
-**Step 1: Compute sums**
+n = 5<br>
+S_x = 15<br>
+S_y = 20<br>
+S_{x^2} = 55<br>
+S_{xy} = 66<br>
 
-- \(Σx_i = 1 + 2 + 3 + 4 + 5 = 15\)  
-- \(Σy_i = 2 + 4 + 5 + 4 + 5 = 20\)  
-- \(Σx_i^2 = 1 + 4 + 9 + 16 + 25 = 55\)  
-- \(Σx_i y_i = (1)(2) + (2)(4) + (3)(5) + (4)(4) + (5)(5) = 2 + 8 + 15 + 16 + 25 = 66\)  
-- \(n = 5\)
+Calculate slope \(b\):
 
-**Step 2: Calculate slope \(m\)**
-
-m = [5 * 66 - 15 * 20] / [5 * 55 - 15^2] <br>
-  = (330 - 300) / (275 - 225) <br>
+b = (5 * 66 - 15 * 20) / (5 * 55 - 15^2) <br>
   = 30 / 50<br>
   = 0.6<br>
   
-**Step 3: Calculate intercept \(c\)**
+Calculate intercept \(a\):
 
-c = (20 - 0.6 * 15) / 5<br>
-  = (20 - 9) / 5 <br>
-  = 11 / 5<br>
+a = (20 - 0.6 * 15) / 5<br>
+  = 11 / 5 <br>
   = 2.2<br>
   
-**Step 4: Write the regression line**
+Regression line:
 
-y = 0.6 * x + 2.2
+y = 2.2 + 0.6 * x
+
 
 ---
 
