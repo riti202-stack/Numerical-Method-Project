@@ -1548,7 +1548,7 @@ to a set of data points \((x_i, y_i)\), minimizing the sum of the squares of the
    - Derive formulas for \(a\) and \(b\) that best fit the data.
 
 3. $\color{Hotpink}{\mathbf{Notation}}$  
-   - Given \(n\) points: \((x_1,y_1), (x_2,y_2), \dots, (x_n,y_n)\).  
+   - Given \(n\) points: \((x_1,y_1), (x_2,y_2),....., (x_n,y_n)\).  
    - Define sums:  
      ```
      S_x = Σ x_i
