@@ -1721,7 +1721,7 @@ where \(a\) and \(b\) are constants to be determined.
 
 ---
 
-1. $\color{Hotpink}{\mathbf{Key\ Linearization}}$
+1. $\color{Hotpink}{\mathbf{ Linearization}}$
 
 - Suppose the transcendental equation is nonlinear in its original form.
 - By applying logarithms, exponentials, or other transformations, it can be converted to a **linear form**.
@@ -1745,7 +1745,7 @@ Y = a + b x
 
 ---
 
-2. $\color{Hotpink}{\mathbf{Key\ Least Squares Method Overview}}$
+2. $\color{Hotpink}{\mathbf{ Least Squares Method Overview}}$
  
 
 The least squares method finds \(a\) and \(b\) to minimize the sum of squared differences between observed and predicted values:
@@ -1762,7 +1762,7 @@ sum (x_i * Y_i) = a * sum x_i + b * sum (x_i^2)
 
 ---
 
-3. $\color{Hotpink}{\mathbf{Key\ formulas}}$  
+3. $\color{Hotpink}{\mathbf{ formulas}}$  
 
 - Number of data points: n  
 - Sum of x-values: sumX = Σ x_i  
@@ -1781,7 +1781,7 @@ for the exponential example.
 
 ---
 
-4. $\color{Hotpink}{\mathbf{Key\ Procedure}}$
+4. $\color{Hotpink}{\mathbf{ Procedure}}$
 
 - Transform the original \(y_i\) values into \(Y_i\) using the chosen transformation.  
 - Calculate sums: sumX, sumY, sumX2, sumXY.  
@@ -1792,7 +1792,7 @@ for the exponential example.
 
 ---
 
-5. $\color{Hotpink}{\mathbf{Key\ Procedure}}$
+5. $\color{Hotpink}{\mathbf{ Procedure}}$
 
 Given data:
 
@@ -1803,7 +1803,7 @@ Given data:
 Assume the model:  
 y = A * e^(B * x)
 
- $\color{Hotpink}{\mathbf{Key\ Step 1: Linearize by taking natural logarithm:}}$
+ $\color{Hotpink}{\mathbf{ Step 1: Linearize by taking natural logarithm:}}$
  
 
 Y = ln y = ln A + B * x = a + b * x
@@ -1815,7 +1815,7 @@ Calculate \(Y = \ln y\):
 | y  | 1.4 | 2.5 | 4.2 | 7.4 | 12.6 |
 | Y=ln y | 0.336 | 0.916 | 1.435 | 2.001 | 2.533 |
 
- $\color{Hotpink}{\mathbf{Key\ Step 2: Calculate sums:}}$
+ $\color{Hotpink}{\mathbf{Step 2: Calculate sums:}}$
  
 
 n = 5
@@ -1828,7 +1828,7 @@ sum x_i^2 = 0.5^2 + 1^2 + 1.5^2 + 2^2 + 2.5^2 = 0.25 + 1 + 2.25 + 4 + 6.25 = 13.
 
 sum x_i * Y_i = (0.5)(0.336) + (1)(0.916) + (1.5)(1.435) + (2)(2.001) + (2.5)(2.533) = 0.168 + 0.916 + 2.153 + 4.002 + 6.333 = 13.572<br>
 
- $\color{Hotpink}{\mathbf{Key\ Step 3: Calculate \(b\) and \(a\):}}$
+ $\color{Hotpink}{\mathbf{ Step 3: Calculate \(b\) and \(a\):}}$
 
 
 b = (n * sum(x_i * Y_i) - sum(x_i) * sum(Y_i)) / (n * sum(x_i^2) - (sum(x_i))^2)<br>
@@ -1838,7 +1838,7 @@ b = (n * sum(x_i * Y_i) - sum(x_i) * sum(Y_i)) / (n * sum(x_i^2) - (sum(x_i))^2)
   = 1.096<br>
 
 
- $\color{Hotpink}{\mathbf{Key\ Step 4: Back-transform}}$
+ $\color{Hotpink}{\mathbf{ Step 4: Back-transform}}$
 
  
 
@@ -1850,7 +1850,7 @@ Final model:
 y = 0.819 * e^(1.096 * x)
 
 ---
-6. $\color{Hotpink}{\mathbf{Key\  Applications}}$
+6. $\color{Hotpink}{\mathbf{  Applications}}$
  
 
 - Growth and decay problems  
