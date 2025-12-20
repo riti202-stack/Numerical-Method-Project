@@ -1373,3 +1373,108 @@ int main() {
 Approximate integral value is 6
 
 ```
+### Simpsons Three-Eighths Rule Theory
+
+ 
+<details>
+<summary>Click to expand Theory</summary>
+<br>
+
+---
+
+&nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Simpson's\ 3/8\ Rule}}$
+
+Simpson’s 3/8 Rule is a numerical method used to approximate the definite integral of a function. It is based on approximating the integrand by a cubic polynomial that passes through four equally spaced points.
+
+1. $\color{Hotpink}{\mathbf{When\ to\ Use}}$  
+    - When you want to approximate an integral \(\int_a^b f(x) dx\).  
+    - The interval \([a, b]\) is divided into \(n\) sub-intervals, where \(n\) is a multiple of 3.  
+    - Function values are known at equally spaced points.
+
+2. $\color{Hotpink}{\mathbf{Basic\ Idea}}$  
+    - Approximate the integrand by cubic polynomials on each group of three subintervals.  
+    - Sum the approximations over the entire interval.
+
+3. $\color{Hotpink}{\mathbf{Step\ Size}}$  
+    - Divide the interval \([a, b]\) into \(n\) equal parts where \(n\) is divisible by 3.  
+    - Step size h = (b - a) / n
+.
+
+4. $\color{Hotpink}{\mathbf{Formula}}$  
+
+Integral ≈ (3 × 1 / 8) × [0 + 3×1 + 3×8 + 27]<br>
+= (3/8) × [0 + 3 + 24 + 27]<br>
+= (3/8) × 54<br>
+= 20.25<br> 
+
+Exact integral of \(x^3\) from 0 to 3 is:
+Integral of x^3 from 0 to 3 = (3^4) / 4 = 81 / 4 = 20.25
+
+
+---
+
+</details>
+
+
+ ###  Simpsons Three-Eighths Rule Code
+```python
+#include <iostream>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int n;
+    fin >> n;
+    double a, b;
+    fin >> a >> b;
+
+    if (n % 3 != 0) {
+        fout << "Error: Number of intervals n must be a multiple of 3." << endl;
+        return 1;
+    }
+
+    vector<double> f(n + 1);
+    for (int i = 0; i <= n; i++) {
+        fin >> f[i];
+    }
+
+    double h = (b - a) / n;
+    double integral = f[0] + f[n];
+
+    
+    for (int i = 1; i < n; i++) {
+        if (i % 3 == 0)
+            integral += 2 * f[i];
+        else
+            integral += 3 * f[i];
+    }
+
+    integral *= (3 * h / 8.0);
+
+    fout << "Approximate integral value is " << integral << endl;
+
+    fin.close();
+    fout.close();
+
+    return 0;
+}
+
+```
+#### Simpsons Three-Eighths Rule Input
+```
+3
+0 3
+0 1 8 27
+
+
+```
+####  Simpsons Three-Eighths Rule Output
+```
+Approximate integral value is 20.25
+
+
+```
