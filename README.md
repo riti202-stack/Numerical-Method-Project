@@ -5,8 +5,8 @@
     - [Bisection Method](#bisection-method)
       - [Theory](#bisection-theory)
       - [Code](#bisection-code)
-      - [input file](#bisection-input-file)
-      - [output file](#bisection-output-file)
+      - [input file](#bisection-input)
+      - [output file](#bisection-output)
     - [False Position Method](#false-position-method)
       - [Theory](#false-position-method-theory)
       - [Code](#false-position-method-code)
@@ -214,14 +214,15 @@ int main() {
 	 <summary>
 		 Click to See Input file
 	 </summary>
-<br> 
-Here at first line   
-      we take the assumed interval a,b as input and in second line 
-	  the value of tolarence is taken as input <br>
+
   ```
   1, 2
   0.0001
   ```
+<br> 
+Here at first line   
+      we take the assumed interval a,b as input and in second line 
+	  the value of tolarence is taken as input <br>
 	 
  </details>
 
@@ -231,24 +232,27 @@ Here at first line
 	 <summary>
 		 Click to see Output 
 	 </summary>
-	 <br>
-Iteration &emsp;&emsp;	 a	&emsp;&emsp; b	&emsp;&emsp;  c	&emsp;&emsp;       f(c)<br>
-1	&nbsp;	1.000000  &nbsp;	2.000000 &nbsp;	1.500000 &nbsp;	-0.125000<br>
-2	&nbsp;	1.500000  &nbsp;	2.000000 &nbsp;	1.750000 &nbsp;	1.609375<br>
-3	&nbsp;	1.500000  &nbsp;	1.750000 &nbsp;	1.625000 &nbsp;	0.666016<br>
-4	&nbsp;	1.500000  &nbsp;    1.625000 &nbsp;	1.562500 &nbsp;	0.252197<br>
-5	&nbsp;	1.500000  &nbsp;    1.562500 &nbsp;	1.531250 &nbsp;	0.059113<br>
-6	&nbsp;	1.500000  &nbsp;	1.531250 &nbsp;	1.515625 &nbsp;	-0.034054<br>
-7	&nbsp;	1.515625  &nbsp;	1.531250 &nbsp;	1.523438 &nbsp;	0.012250<br>
-8	&nbsp;	1.515625  &nbsp;	1.523438 &nbsp;	1.519531 &nbsp;	-0.010971<br>
-9	&nbsp;	1.519531  &nbsp;	1.523438 &nbsp;	1.521484 &nbsp;	0.000622<br>
-10	&nbsp;	1.519531  &nbsp;	1.521484 &nbsp;	1.520508 &nbsp;	-0.005179<br>
-11	&nbsp;	1.520508  &nbsp;	1.521484 &nbsp;	1.520996 &nbsp;	-0.002279<br>
-12	&nbsp;	1.520996  &nbsp;	1.521484 &nbsp;	1.521240 &nbsp;	-0.000829<br>
-13	&nbsp;	1.521240  &nbsp;	1.521484 &nbsp;	1.521362 &nbsp;	-0.000103<br>
+	 
+```
+Iteration 	 a	 b	  c	       f(c)
+1		1.000000 	2.000000 	1.500000 	-0.125000
+2		1.500000  	2.000000 	1.750000 	1.609375
+3		1.500000  	1.750000 	1.625000 	0.666016
+4		1.500000      1.625000 	1.562500 	0.252197
+5		1.500000      1.562500 	1.531250 	0.059113
+6		1.500000  	1.531250 	1.515625 	-0.034054
+7		1.515625  	1.531250 	1.523438 	0.012250
+8		1.515625  	1.523438 	1.519531 	-0.010971
+9		1.519531  	1.523438 	1.521484 	0.000622
+10		1.519531  	1.521484 	1.520508 	-0.005179
+11		1.520508  	1.521484 	1.520996 	-0.002279
+12		1.520996  	1.521484 	1.521240 	-0.000829
+13		1.521240  	1.521484 	1.521362 	-0.000103
 
-Root found at x = 1.521362<br>
+
+Root found at x = 1.521362
 Converged in 13 iterations.
+```
 
 	 
  </details>
