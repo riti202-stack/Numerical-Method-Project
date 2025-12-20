@@ -1400,8 +1400,33 @@ Simpson’s 3/8 Rule is a numerical method used to approximate the definite inte
     - Step size h = (b - a) / n
 .
 
-4. $\color{Hotpink}{\mathbf{Formula}}$  
+4. $\color{Hotpink}{\mathbf{Formula}}$
+   Integral ≈ (3h/8) × [ f(x0) + 3f(x1) + 3f(x2) + 2f(x3) + 3f(x4) + 3f(x5) + 2f(x6) + ... + f(xn) ]
+   
+- Here, \(x_0, x_1, ..., x_n\) are the equally spaced points.
+- The coefficients 3 and 2 alternate accordingly every three points, with 3 applied to the first two points in each group and 2 applied to the last point before the next group.
 
+5. $\color{Hotpink}{\mathbf{Key\ Characteristics}}$  
+    - More accurate than the trapezoidal rule and Simpson’s 1/3 rule for some functions.  
+    - Requires the number of intervals to be a multiple of 3.  
+    - Good for smooth integrands and small \(n\).
+
+6. $\color{Hotpink}{\mathbf{Applications}}$  
+    - Approximating definite integrals in engineering and physics.  
+    - Numerical solution of integrals when an analytical solution is difficult.  
+    - Used in numerical methods courses and computational projects.
+
+---
+
+### :pencil2: Example
+
+Approximate the integral of \(f(x) = x^3\) over \([0, 3]\) with \(n = 3\) subintervals.
+
+- \(h = (3 - 0)/3 = 1\)
+- Points: \(x_0=0, x_1=1, x_2=2, x_3=3\)
+- Function values: \(f(0)=0, f(1)=1, f(2)=8, f(3)=27\)
+
+Apply formula:
 Integral ≈ (3 × 1 / 8) × [0 + 3×1 + 3×8 + 27]<br>
 = (3/8) × [0 + 3 + 24 + 27]<br>
 = (3/8) × 54<br>
