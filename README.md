@@ -953,22 +953,22 @@ Find the first derivative at \(x = 0\).
 
 **Step 2: Identify values**
 
-\
+\[
 h = 1,\quad \Delta y_0 = 1,\quad \Delta^2 y_0 = 2
-\
+\]
 
 **Step 3: Apply differentiation formula**
 
-\
+\[
 \left(\frac{dy}{dx}\right)_{x=0}
 = \frac{1}{1}\left(1 - \frac{1}{2}\times 2\right)
 = 0
-\
+\]
 
 **Final Answer:**  
-\
+\[
 \left(\frac{dy}{dx}\right)_{x=0} \approx 0
-\
+\]
 
 ---
 
