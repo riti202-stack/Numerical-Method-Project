@@ -86,12 +86,12 @@
        - [input file](#neumerical-differentiation-by-backward-interpolation-method-input-file)
        - [output file](#neumerical-differentiation-by-backward-interpolation-method-output-file)
 - [Solution of Numerical Integrations](#solution-of-numerical-integrations)
-  - [Simpson's One-Third Rule](#simpsons-one-third-rule)
+  - [Simpsons One-Third Rule](#simpsons-one-third-rule)
     - [Theory](#simpsons-one-third-rule-theory)
     - [Code](#simpsons-one-third-rule-code)
     - [Input](#simpsons-one-third-rule-input)
     - [Output](#simpsons-one-third-rule-output)
-  - [Simpson's Three-Eighths Rule](#simpsons-three-eighths-rule)
+  - [Simpsons Three-Eighths Rule](#simpsons-three-eighths-rule)
     - [Theory](#simpsons-three-eighths-rule-theory)
     - [Code](#simpsons-three-eighths-rule-code)
     - [Input](#simpsons-three-eighths-rule-input)
@@ -1230,3 +1230,81 @@ Approximate derivative at x = 3 is 6
 
 
 ``` 
+# Solution of Numerical Integrations
+## Simpsons One-Third Rule
+### Simpsons One-Third Rule Theory
+
+<details>
+<summary>Click to expand Theory</summary>
+<br>
+
+---
+
+&nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Simpson's\ 1/3\ Rule}}$
+
+Simpson’s 1/3 Rule is a **numerical integration method** used to approximate the definite integral of a function. It is especially effective when the function is smooth and the interval is divided into an even number of subintervals.
+
+1. $\color{Hotpink}{\mathbf{When\ to\ Use}}$  
+   - The interval \([a, b]\) is divided into **an even number of subintervals (n)**.  
+   - The function values at these points are known or can be calculated.  
+   - Suitable for functions that are reasonably smooth.
+
+2. $\color{Hotpink}{\mathbf{Basic\ Idea}}$  
+   - Approximate the function by a series of parabolas over pairs of intervals.  
+   - Calculate the integral of these parabolas to estimate the area under the curve.
+
+3. $\color{Hotpink}{\mathbf{Notation}}$  
+   - \(a, b\): Limits of integration  
+   - \(n\): Number of subintervals (must be even)  
+   - \(h = \frac{b - a}{n}\): Width of each subinterval  
+   - \(x_i = a + i \times h\), for \(i = 0, 1, 2, ..., n\)  
+   - \(f(x_i)\): Function value at \(x_i\)
+
+4. $\color{Hotpink}{\mathbf{Formula}}$  
+
+**Integral approximation:**
+Integral ≈ (h/3) * [ f(x0) + 4 * Σ f(x_odd) + 2 * Σ f(x_even) + f(xn) ]
+
+Where:  
+- Σ f(x_odd) is the sum of function values at odd indices (x1, x3, x5, ...)  
+- Σ f(x_even) is the sum of function values at even indices (x2, x4, x6, ...) excluding x0 and xn  
+
+5. $\color{Hotpink}{\mathbf{Key\ Characteristics}}$  
+   - Requires an **even number of subintervals**.  
+   - More accurate than the Trapezoidal rule for smooth functions.  
+   - Error decreases rapidly with smaller \(h\).  
+   - Widely used in engineering and scientific calculations.
+
+6. $\color{Hotpink}{\mathbf{Applications}}$  
+   - Calculating areas and definite integrals.  
+   - Physics, engineering, and statistics problems.  
+   - Situations where analytical integration is difficult or impossible.
+
+---
+
+### :pencil2: Example
+
+Calculate \(\int_0^2 (1 + x^3) dx\) using Simpson’s 1/3 rule with \(n=4\).
+
+| i | x_i | f(x_i) = 1 + (x_i)^3 |
+|---|-----|-----------------------|
+| 0 | 0   | 1                     |
+| 1 | 0.5 | 1.125                 |
+| 2 | 1.0 | 2                     |
+| 3 | 1.5 | 4.375                 |
+| 4 | 2.0 | 9                     |
+
+Calculate \(h = (2 - 0) / 4 = 0.5\).
+
+Apply the formula:
+
+Integral ≈ (0.5 / 3) * [1 + 4*(1.125 + 4.375) + 2*(2) + 9]<br>
+= (0.1667) * [1 + 4*(5.5) + 4 + 9]<br>
+= 0.1667 * [1 + 22 + 4 + 9]<br>
+= 0.1667 * 36<br>
+= 6<br>
+
+---
+
+</details>
+
