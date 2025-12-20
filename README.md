@@ -1047,7 +1047,96 @@ int main() {
 ```
 Approximate derivative at x = 0 is 0
 
-
-
 ``` 
+#### Numerical Differentiation by Newton’s Backward Interpolation Method Theory
+<details>
+<summary>Click to expand Theory</summary>
+<br>
+
+---
+
+&nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Numerical\ Differentiation\ using\ Newton's\ Backward\ Interpolation}}$
+
+Newton’s Backward Interpolation is a **numerical method** used to approximate the **derivative of a function** when the function values are known at a set of **equally spaced points**, especially useful for estimating the derivative **near the end** of the data set.
+
+1. $\color{Hotpink}{\mathbf{When\ to\ Use}}$  
+    - Data points are **equally spaced**.  
+    - Derivative is required **near the last data point**.  
+    - Function values are known only at **discrete points**.
+
+2. $\color{Hotpink}{\mathbf{Basic\ Idea}}$  
+    - Constructs **Newton’s Backward Interpolation Polynomial**.  
+    - Differentiate the polynomial with respect to \(x\).  
+    - Use backward differences to approximate the derivative.
+
+3. $\color{Hotpink}{\mathbf{Notation}}$  
+    - Data points: \((x_0, y_0), (x_1, y_1), ..., (x_n, y_n)\)  
+    - Step size: \(h = x_1 - x_0\) (assumed uniform spacing)  
+    - Define: \(p = \frac{x - x_n}{h}\) (distance from last data point)  
+    - Backward differences: \(\nabla y_n, \nabla^2 y_n, \nabla^3 y_n, \dots\)
+
+4. $\color{Hotpink}{\mathbf{Newton's\ Backward\ Interpolation\ Formula}}$
+
+y = y_n + p * ∇y_n<br> 
+    + [p(p + 1) / 2!] * ∇²y_n<br> 
+    + [p(p + 1)(p + 2) / 3!] * ∇³y_n<br> 
+    + ...<br>
+
+
+5. $\color{Hotpink}{\mathbf{First\ Derivative\ Formula}}$
+
+By differentiating the backward interpolation polynomial:
+
+(dy/dx) at x = x_n<br> 
+= (1/h) * [ ∇y_n + (1/2) ∇²y_n + (1/3) ∇³y_n + ... ]<br>
+
+
+6. $\color{Hotpink}{\mathbf{Key\ Characteristics}}$  
+    - Uses **backward differences** based on last data points.  
+    - Suitable for derivatives near the **end of the data set**.  
+    - Accuracy improves with higher order differences and more data points.
+
+7. $\color{Hotpink}{\mathbf{Applications}}$  
+    - Estimating rates of change from discrete measurements at the end of an interval.  
+    - Physics and engineering problems involving tabulated data.  
+    - Numerical computation and data fitting.
+
+---
+
+### :pencil2: Example
+
+Given the data:
+
+| x | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+| y | 1 | 2 | 5 | 10 |
+
+Find the first derivative at \(x = 3\).
+
+**Step 1: Backward Difference Table**
+
+| x | y  | ∇y  | ∇²y |
+|---|----|-----|-----|
+| 0 | 1  |     |     |
+| 1 | 2  |     |     |
+| 2 | 5  | 3   | 1   |
+| 3 | 10 | 5   | 2   |
+
+**Step 2: Identify values**
+
+h = 1,    ∇y₃ = 5,    ∇²y₃ = 2
+
+
+**Step 3: Apply differentiation formula**
+
+(dy/dx) at x = 3 = (1/1) * (5 + (1/2) × 2) = 6
+
+
+**Final Answer:**  
+(dy/dx) at x = 3 ≈ 6
+
+
+---
+
+</details>
   
