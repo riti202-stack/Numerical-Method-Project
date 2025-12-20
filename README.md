@@ -1727,21 +1727,21 @@ where \(a\) and \(b\) are constants to be determined.
 - By applying logarithms, exponentials, or other transformations, it can be converted to a **linear form**.
 - Example: For \(y = Ae^{Bx}\), take natural logarithm:
 
-\[
-\ln y = \ln A + Bx
-\]
+ 
+ln y = ln A + Bx
+
 
 Set:
 
-\[
-Y = \ln y, \quad a = \ln A, \quad b = B
-\]
+
+Y = ln y,  a = ln A,  b = B
+
 
 So the linearized equation becomes:
 
-\[
+
 Y = a + b x
-\]
+
 
 ---
 
@@ -1749,18 +1749,15 @@ Y = a + b x
 
 The least squares method finds \(a\) and \(b\) to minimize the sum of squared differences between observed and predicted values:
 
-\[
-S = \sum_{i=1}^n (Y_i - a - b x_i)^2
-\]
+S = sum from i = 1 to n of (Y_i - a - b * x_i)^2
+
+
 
 Minimizing \(S\) leads to the normal equations:
 
-\[
-\sum Y_i = n a + b \sum x_i
-\]
-\[
-\sum x_i Y_i = a \sum x_i + b \sum x_i^2
-\]
+sum Y_i = n * a + b * sum x_i
+sum (x_i * Y_i) = a * sum x_i + b * sum (x_i^2)
+
 
 ---
 
@@ -1776,12 +1773,8 @@ Solve for:
 b = (n * sumXY - sumX * sumY) / (n * sumX2 - (sumX)^2)
 a = (sumY - b * sumX) / n
 
-
- 
-
-\[
 A = e^a
-\]
+
 
 for the exponential example.
 
@@ -1807,15 +1800,12 @@ Given data:
 | y  | 1.4 | 2.5 | 4.2 | 7.4 | 12.6 |
 
 Assume the model:  
-\[
-y = A e^{B x}
-\]
+y = A * e^(B * x)
+
 
 **Step 1: Linearize by taking natural logarithm:**
 
-\[
-Y = \ln y = \ln A + B x = a + b x
-\]
+Y = ln y = ln A + B * x = a + b * x
 
 Calculate \(Y = \ln y\):
 
@@ -1826,53 +1816,33 @@ Calculate \(Y = \ln y\):
 
 **Step 2: Calculate sums**
 
-\[
 n = 5
-\]
 
-\[
-\sum x_i = 0.5 + 1 + 1.5 + 2 + 2.5 = 7.5
-\]
+sum x_i = 0.5 + 1 + 1.5 + 2 + 2.5 = 7.5<br>
 
-\[
-\sum Y_i = 0.336 + 0.916 + 1.435 + 2.001 + 2.533 = 7.221
-\]
+sum Y_i = 0.336 + 0.916 + 1.435 + 2.001 + 2.533 = 7.221<br>
 
-\[
-\sum x_i^2 = 0.5^2 + 1^2 + 1.5^2 + 2^2 + 2.5^2 = 0.25 + 1 + 2.25 + 4 + 6.25 = 13.75
-\]
+sum x_i^2 = 0.5^2 + 1^2 + 1.5^2 + 2^2 + 2.5^2 = 0.25 + 1 + 2.25 + 4 + 6.25 = 13.75<br>
 
-\[
-\sum x_i Y_i = (0.5)(0.336) + (1)(0.916) + (1.5)(1.435) + (2)(2.001) + (2.5)(2.533) = 0.168 + 0.916 + 2.153 + 4.002 + 6.333 = 13.572
-\]
+sum x_i * Y_i = (0.5)(0.336) + (1)(0.916) + (1.5)(1.435) + (2)(2.001) + (2.5)(2.533) = 0.168 + 0.916 + 2.153 + 4.002 + 6.333 = 13.572<br>
 
 **Step 3: Calculate \(b\) and \(a\):**
 
-\[
-b = \frac{n \sum x_i Y_i - \sum x_i \sum Y_i}{n \sum x_i^2 - (\sum x_i)^2} 
-= \frac{5 \times 13.572 - 7.5 \times 7.221}{5 \times 13.75 - 7.5^2} 
-= \frac{67.86 - 54.16}{68.75 - 56.25} 
-= \frac{13.7}{12.5} = 1.096
-\]
+b = (n * sum(x_i * Y_i) - sum(x_i) * sum(Y_i)) / (n * sum(x_i^2) - (sum(x_i))^2)<br>
+  = (5 * 13.572 - 7.5 * 7.221) / (5 * 13.75 - 7.5^2)<br>
+  = (67.86 - 54.16) / (68.75 - 56.25)<br>
+  = 13.7 / 12.5<br>
+  = 1.096<br>
 
-\[
-a = \frac{\sum Y_i - b \sum x_i}{n} 
-= \frac{7.221 - 1.096 \times 7.5}{5} 
-= \frac{7.221 - 8.22}{5} 
-= \frac{-0.999}{5} = -0.2
-\]
 
 **Step 4: Back-transform**
 
-\[
-A = e^a = e^{-0.2} \approx 0.819
-\]
+A = e^a = e^(-0.2) ≈ 0.819
+
 
 Final model:
 
-\[
-y = 0.819 e^{1.096 x}
-\]
+y = 0.819 * e^(1.096 * x)
 
 ---
 
