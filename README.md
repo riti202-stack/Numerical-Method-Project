@@ -68,6 +68,11 @@
        - [Code](#newtons-backward-interpolation-method-code)
        - [input file](#newtons-backward-interpolation-method-input-file)
        - [output file](#newtons-backward-interpolation-method-output-file)
+      - [Newtons Divided Difference Interpolation Method](#newtons-divided-difference-interpolation-method)
+       - [Theory](#newtons-divided-difference-interpolation-method-theory)
+       - [Code](#newtons-divided-difference-interpolation-method-code)
+       - [input file](#newtons-divided-difference-interpolation-method-input-file)
+       - [output file](#newtons-divided-difference-interpolation-method-output-file)
 
   ---
 
@@ -698,7 +703,98 @@ int main() {
 ```
 Estimated value at x = 2.5 is 7.25
 ```  
-    
+
+#### Newtons Divided Difference Interpolation Method Theory
+<details>
+<summary>Click to expand Theory</summary>
+<br>
+
+---
+
+&nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Newton's\ Divided\ Difference\ Interpolation}}$
+
+Newton’s Divided Difference Interpolation is a **numerical method** used to estimate the value of a function when the function values are known at a set of **unequally spaced data points**. This method is useful when data points are not equally spaced and provides an efficient way to construct an interpolating polynomial.
+
+1. $\color{Hotpink}{\mathbf{When\ to\ Use}}$  
+    - Independent variable values are **unequally spaced**.  
+    - Interpolation point lies **anywhere within the data range**.  
+    - Only **discrete data values** are available.
+
+2. $\color{Hotpink}{\mathbf{Basic\ Idea}}$  
+    - Constructs an **interpolating polynomial** using **divided differences**.  
+    - Each higher-order divided difference improves the approximation.
+
+3. $\color{Hotpink}{\mathbf{Notation}}$  
+    - Let the data points be: $(x_0, y_0), (x_1, y_1), (x_2, y_2), \dots$  
+    - Divided difference symbols:  
+      - $f[x_0] = y_0$  
+      - $f[x_0, x_1]$ = first divided difference  
+      - $f[x_0, x_1, x_2]$ = second divided difference  
+
+4. $\color{Hotpink}{\mathbf{Formula}}$  
+
+\[
+P(x) = f[x_0]
++ (x - x_0)f[x_0, x_1]
++ (x - x_0)(x - x_1)f[x_0, x_1, x_2]
++ \dots
+\]
+
+Where:  
+- $f[x_0, x_1] = \dfrac{f(x_1) - f(x_0)}{x_1 - x_0}$  
+- Higher-order divided differences are computed recursively
+
+5. $\color{Hotpink}{\mathbf{Key\ Characteristics}}$  
+    - Works for **unequal interval data**.  
+    - Polynomial form is **incremental** (easy to add new data points).  
+    - More flexible than forward or backward interpolation.  
+    - Accuracy increases with higher-order terms.
+
+6. $\color{Hotpink}{\mathbf{Applications}}$  
+    - Interpolation of experimental or tabulated data.  
+    - Engineering and scientific computations.  
+    - Numerical data fitting and approximation.  
+    - Basis for numerical differentiation and integration.
+
+---
+
+### :pencil2: Example
+
+Given the data:
+
+| x | 1 | 2 | 4 |
+|---|---|---|---|
+| y | 1 | 4 | 16 |
+
+Find \(y\) at \(x = 3\).
+
+**Step 1: Divided Difference Table**
+
+| x | y | First DD | Second DD |
+|---|---|----------|-----------|
+| 1 | 1 | 3        | 1         |
+| 2 | 4 | 6        |           |
+| 4 |16 |          |           |
+
+**Step 2: Construct the Polynomial**
+
+\[
+P(x) = 1 + (x - 1)3 + (x - 1)(x - 2)1
+\]
+
+**Step 3: Evaluate at \(x = 3\)**
+
+\[
+P(3) = 1 + (2)3 + (2)(1) = 9
+\]
+
+**Final Answer:**  
+y(3) ≈ 9
+
+---
+
+</details>
+
     
   
   
