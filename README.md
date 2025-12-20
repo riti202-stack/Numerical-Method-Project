@@ -75,7 +75,7 @@
 
   ## Bisection Method
 
-  #### Bisection Method Theory
+  
   <details>
   <summary>Click to expand Theory</summary>
   
@@ -129,6 +129,84 @@
  
 
 </details>
+
+ <details>
+  <summary>Click to expand Code</summary>
+
+  ```cpp
+
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+// Function definition
+double f(double x) {
+    return x*x*x - x - 2;   // Example: x^3 - x - 2 = 0
+}
+
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    double a, b, tol, c;
+    int iteration = 1;
+
+    // Read input
+    fin >> a >> b;
+    fin >> tol;
+
+    // Check validity of interval
+    if (f(a) * f(b) >= 0) {
+        fout << "Invalid interval. Bisection method cannot be applied.\n";
+        return 0;
+    }
+
+    fout << fixed << setprecision(6);
+    fout << "Iteration\t a\t\t b\t\t c\t\t f(c)\n";
+
+    // Loop until tolerance condition is satisfied
+    while (true) {
+        c = (a + b) / 2;
+
+        fout << iteration << "\t\t"
+             << a << "\t"
+             << b << "\t"
+             << c << "\t"
+             << f(c) << endl;
+
+        // Stopping condition
+        if (fabs(f(c)) < tol || fabs(b - a) < tol) {
+            fout << "\nRoot found at x = " << c << endl;
+            fout << "Converged in " << iteration << " iterations.\n";
+            break;
+        }
+
+        // Update interval
+        if (f(a) * f(c) < 0)
+            b = c;
+        else
+            a = c;
+
+        iteration++;
+    }
+
+    fin.close();
+    fout.close();
+
+    return 0;
+}
+```
+  
+
+
+
+
+	 
+ </details>
+
+
 
  # Ordinary Differential Equation solving Methods
 
