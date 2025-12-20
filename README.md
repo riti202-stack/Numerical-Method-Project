@@ -75,7 +75,7 @@
 
   ## Bisection Method
 
-  
+  #### Bisection Theory
   <details>
   <summary>Click to expand Theory</summary>
   
@@ -84,9 +84,9 @@
  ---
  
   
-  &nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Bisection Method: Theory and Application}}$
+&nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Bisection Method: Theory and Application}}$
 
- The *Bisection Method* is a fundamental root-finding algorithm in numerical analysis. It is a $\color{orange}{\mathbf{bracketing method}}$ used to find the real roots of a continuous function f(x) = 0.
+&emsp;&emsp;The *Bisection Method* is a fundamental root-finding algorithm in numerical analysis. It is a $\color{orange}{\mathbf{bracketing method}}$ used to find the real                     <br>&emsp;&emsp;roots of a continuous function f(x) = 0.
 
  1. $\color{Hotpink}{\mathbf{Mathematical Principle}}$ : The method is based on the $\color{orange}{\mathbf{Intermediate Value Theorem (IVT)}}$.
 
@@ -129,6 +129,8 @@
  
 
 </details>
+
+#### Bisection Code
 
  <details>
   <summary>Click to expand Code</summary>
@@ -202,6 +204,49 @@ int main() {
 
 
 
+
+	 
+ </details>
+
+ #### Bisection Input
+
+ <details>
+	 <summary>
+		 Click to See Input file
+	 </summary>
+<br> 
+Here at first line   
+      we take the assumed interval a,b as input and in second line 
+	  the value of tolarence is taken as input <br>
+  1, 2<br>
+  0.0001
+	 
+ </details>
+
+ #### Bisection Output
+
+ <details>
+	 <summary>
+		 Click to see Output 
+	 </summary>
+	 <br>
+Iteration &emsp;&emsp;	 a	&emsp;&emsp; b	&emsp;&emsp;  c	&emsp;&emsp;       f(c)<br>
+1	&nbsp;	1.000000  &nbsp;	2.000000 &nbsp;	1.500000 &nbsp;	-0.125000<br>
+2	&nbsp;	1.500000  &nbsp;	2.000000 &nbsp;	1.750000 &nbsp;	1.609375<br>
+3	&nbsp;	1.500000  &nbsp;	1.750000 &nbsp;	1.625000 &nbsp;	0.666016<br>
+4	&nbsp;	1.500000  &nbsp;    1.625000 &nbsp;	1.562500 &nbsp;	0.252197<br>
+5	&nbsp;	1.500000  &nbsp;    1.562500 &nbsp;	1.531250 &nbsp;	0.059113<br>
+6	&nbsp;	1.500000  &nbsp;	1.531250 &nbsp;	1.515625 &nbsp;	-0.034054<br>
+7	&nbsp;	1.515625  &nbsp;	1.531250 &nbsp;	1.523438 &nbsp;	0.012250<br>
+8	&nbsp;	1.515625  &nbsp;	1.523438 &nbsp;	1.519531 &nbsp;	-0.010971<br>
+9	&nbsp;	1.519531  &nbsp;	1.523438 &nbsp;	1.521484 &nbsp;	0.000622<br>
+10	&nbsp;	1.519531  &nbsp;	1.521484 &nbsp;	1.520508 &nbsp;	-0.005179<br>
+11	&nbsp;	1.520508  &nbsp;	1.521484 &nbsp;	1.520996 &nbsp;	-0.002279<br>
+12	&nbsp;	1.520996  &nbsp;	1.521484 &nbsp;	1.521240 &nbsp;	-0.000829<br>
+13	&nbsp;	1.521240  &nbsp;	1.521484 &nbsp;	1.521362 &nbsp;	-0.000103<br>
+
+Root found at x = 1.521362<br>
+Converged in 13 iterations.
 
 	 
  </details>
