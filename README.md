@@ -96,6 +96,22 @@
     - [Code](#simpsons-three-eighths-rule-code)
     - [Input](#simpsons-three-eighths-rule-input)
     - [Output](#simpsons-three-eighths-rule-output)
+- [Solution of Curve Fitting Model](#solution-of-curve-fitting-model)
+  - [Least Square Regression Method For Linear Equations](#least-square-regression-method-for-linear-equations-method)
+    - [Theory](#least-square-regression-method-for-linear-equations-theory)
+    - [Code](#least-square-regression-method-for-linear-equations-code)
+    - [Input](#least-square-regression-method-for-linear-equations-input)
+    - [Output](#least-square-regression-method-for-linear-equations-output)
+  - [Least Square Regression Method For Transcendental Equations](#least-square-regression-method-for-transcendental-equations)
+    - [Theory](#least-square-regression-method-for-transcendental-equations-theory)
+    - [Code](#least-square-regression-method-for-transcendental-equations-code)
+    - [Input](#least-square-regression-method-for-transcendental-equations-input)
+    - [Output](#least-square-regression-method-for-transcendental-equations-output)
+  - [Least Square Regression Method For Polynomial Equations](#least-square-regression-method-for-polynomial-equations)
+    - [Theory](#least-square-regression-method-for-polynomial-equations-theory)
+    - [Code](#least-square-regression-method-for-polynomial-equations-code)
+    - [Input](#least-square-regression-method-for-polynomial-equations-input)
+    - [Output](#least-square-regression-method-for-polynomial-equations-output)
   ---
 
   # Nonlinear Equation solving Methods
