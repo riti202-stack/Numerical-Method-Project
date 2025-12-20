@@ -1141,3 +1141,82 @@ h = 1,    ∇y₃ = 5,    ∇²y₃ = 2
 
 </details>
   
+  ### Neumerical Differentiation By Backward Interpolation Method Code
+ ```python
+#include <iostream>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int n;
+    fin >> n;
+
+    vector<double> x(n), y(n);
+    for (int i = 0; i < n; i++) {
+        fin >> x[i] >> y[i];
+    }
+
+   
+    vector<double> diff = y;
+    vector<double> firstDiff, secondDiff, thirdDiff;
+
+     
+    for (int i = n - 1; i > 0; i--) {
+        firstDiff.push_back(diff[i] - diff[i - 1]);
+    }
+    diff = firstDiff;
+
+    
+    if (n > 2) {
+        for (int i = firstDiff.size() - 1; i > 0; i--) {
+            secondDiff.push_back(diff[i] - diff[i - 1]);
+        }
+        diff = secondDiff;
+    }
+
+ 
+    if (n > 3) {
+        for (int i = secondDiff.size() - 1; i > 0; i--) {
+            thirdDiff.push_back(diff[i] - diff[i - 1]);
+        }
+    }
+
+    double h = x[1] - x[0];  
+
+     
+    double derivative = 0.0;
+    derivative += firstDiff.size() > 0 ? firstDiff[0] : 0;
+    derivative += secondDiff.size() > 0 ? 0.5 * secondDiff[0] : 0;
+    derivative += thirdDiff.size() > 0 ? (1.0 / 3.0) * thirdDiff[0] : 0;
+
+    derivative /= h;
+
+    fout << "Approximate derivative at x = " << x[n - 1] << " is " << derivative << endl;
+
+    fin.close();
+    fout.close();
+    return 0;
+}
+
+```
+#### Neumerical Differentiation By Backward Interpolation Method Input File
+```
+4
+0 1
+1 2
+2 5
+3 10
+
+
+
+```
+#### Neumerical Differentiation By Backward Interpolation Method Output File
+```
+Approximate derivative at x = 3 is 6
+
+
+``` 
