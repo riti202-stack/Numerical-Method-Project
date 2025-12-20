@@ -218,8 +218,10 @@ int main() {
 Here at first line   
       we take the assumed interval a,b as input and in second line 
 	  the value of tolarence is taken as input <br>
-  1, 2<br>
+  ```
+  1, 2
   0.0001
+  ```
 	 
  </details>
 
