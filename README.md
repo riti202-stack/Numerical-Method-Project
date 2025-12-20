@@ -1519,3 +1519,99 @@ Approximate integral value is 20.25
 
 
 ```
+# Solution of Curve Fitting Model
+
+## Least Square Regression Method For Linear Equations Method
+
+### Least Square Regression Method For Linear Equations Theory
+ 
+<details>
+<summary>Click to expand Theory</summary>
+<br>
+
+---
+
+&nbsp;&nbsp;&nbsp;&nbsp; :book: **Least Square Regression Method**
+
+Least Square Regression is a statistical method used to find the best-fitting line through a set of data points by minimizing the sum of the squares of the vertical distances of the points from the line. It is commonly used to model the relationship between two variables \(x\) and \(y\) with a linear equation of the form \(y = mx + c\).
+
+1. **When to Use**  
+   - To find the linear relationship between two variables.  
+   - When data points do not perfectly fit a line due to errors or variability.  
+   - To predict values of \(y\) for given \(x\) using the regression line.
+
+2. **Basic Idea**  
+   - Minimize the sum of the squares of the residuals (differences between observed and predicted \(y\)).  
+   - Derive formulas for slope \(m\) and intercept \(c\) that minimize this sum.
+
+3. **Notation**  
+   - Data points: \((x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)\)  
+   - \(n\) is the number of data points.
+
+4. **Formulas**  
+
+- Slope \(m\):
+  m = [ n * Σ(x_i * y_i) - Σx_i * Σy_i ] / [ n * Σ(x_i^2) - (Σx_i)^2 ]
+  
+- Intercept \(c\):
+
+c = (Σy_i - m * Σx_i) / n
+
+- Regression line equation:
+
+y = m * x + c
+
+5. **Key Characteristics**  
+   - Provides the line of best fit minimizing squared errors.  
+   - Assumes a linear relationship between \(x\) and \(y\).  
+   - Sensitive to outliers.
+
+6. **Applications**  
+   - Predicting trends and forecasting.  
+   - Engineering data analysis.  
+   - Economics and social sciences.  
+   - Any scenario requiring linear modeling.
+
+---
+
+### :pencil2: Example
+
+Given the data:
+
+| x | 1 | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|---|
+| y | 2 | 4 | 5 | 4 | 5 |
+
+Find the regression line \(y = mx + c\).
+
+**Step 1: Compute sums**
+
+- \(Σx_i = 1 + 2 + 3 + 4 + 5 = 15\)  
+- \(Σy_i = 2 + 4 + 5 + 4 + 5 = 20\)  
+- \(Σx_i^2 = 1 + 4 + 9 + 16 + 25 = 55\)  
+- \(Σx_i y_i = (1)(2) + (2)(4) + (3)(5) + (4)(4) + (5)(5) = 2 + 8 + 15 + 16 + 25 = 66\)  
+- \(n = 5\)
+
+**Step 2: Calculate slope \(m\)**
+
+m = [5 * 66 - 15 * 20] / [5 * 55 - 15^2] <br>
+  = (330 - 300) / (275 - 225) <br>
+  = 30 / 50<br>
+  = 0.6<br>
+  
+**Step 3: Calculate intercept \(c\)**
+
+c = (20 - 0.6 * 15) / 5<br>
+  = (20 - 9) / 5 <br>
+  = 11 / 5<br>
+  = 2.2<br>
+  
+**Step 4: Write the regression line**
+
+y = 0.6 * x + 2.2
+
+---
+
+</details>
+
+
