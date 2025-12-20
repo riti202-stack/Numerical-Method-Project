@@ -381,7 +381,7 @@ y(0.1) = 1 + (1/6)(0.1 + 2(0.11) + 2(0.1105) + 0.12105)<br>
 </details>
 
  #### Runge Kutta Method Code
-```python
+```cpp
  #include <iostream>
 #include <fstream>
 using namespace std;
@@ -525,7 +525,7 @@ y(0.5) ≈ 1.25
 
 
  #### Newtons Forward Interpolation Method Code
-```python
+```cpp
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -674,7 +674,7 @@ y(2.5) ≈ 7.25
 </details>
 
 #### Newtons Backward Interpolation Method Code
-```python
+```cpp
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -834,7 +834,7 @@ y(3) ≈ 9
 </details>
 
  #### Newtons Divided Difference Interpolation Method Code
-```python
+```cpp
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -997,7 +997,7 @@ h = 1,    Δy₀ = 1,    Δ²y₀ = 2
 </details>
 
   ### Neumerical Differentiation By Forward Interpolation Method Code
- ```python
+ ```cpp
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -1168,7 +1168,7 @@ h = 1,    ∇y₃ = 5,    ∇²y₃ = 2
 </details>
   
   ### Neumerical Differentiation By Backward Interpolation Method Code
- ```python
+ ```cpp
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -1325,7 +1325,7 @@ Integral ≈ (0.5 / 3) * [1 + 4*(1.125 + 4.375) + 2*(2) + 9]<br>
 </details>
 
  ###  Simpsons One-Third Rule Code
-```python
+```cpp
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -1458,7 +1458,7 @@ Integral of x^3 from 0 to 3 = (3^4) / 4 = 81 / 4 = 20.25
 
 
  ###  Simpsons Three-Eighths Rule Code
-```python
+```cpp
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -1620,4 +1620,83 @@ y = 2.2 + 0.6 * x
 
 </details>
 
+### Least Square Regression Method For Linear Equations Code
+```cpp
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <iomanip>  
+
+using namespace std;
+
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int n;
+    fin >> n;
+
+    vector<double> x(n), y(n);
+    for (int i = 0; i < n; i++) {
+        fin >> x[i] >> y[i];
+    }
+
+    double Sx = 0, Sy = 0, Sx2 = 0, Sxy = 0;
+    for (int i = 0; i < n; i++) {
+        Sx += x[i];
+        Sy += y[i];
+        Sx2 += x[i] * x[i];
+        Sxy += x[i] * y[i];
+    }
+
+    double denominator = n * Sx2 - Sx * Sx;
+    double b = (n * Sxy - Sx * Sy) / denominator;
+    double a = (Sy - b * Sx) / n;
+
+    fout << fixed << setprecision(6);
+    fout << "Regression line: y = a + b x\n";
+    fout << "a = " << a << "\n";
+    fout << "b = " << b << "\n";
+
+     double x_predict;
+    cout << "Enter a value of x to predict y: ";
+    cin >> x_predict;
+
+    double y_predict = a + b * x_predict;
+
+    fout << "For x = " << x_predict << ", predicted y = " << y_predict << "\n";
+
+    cout << "For x = " << x_predict << ", predicted y = " << y_predict << "\n";
+
+
+    fin.close();
+    fout.close();
+
+    return 0;
+}
+
+
+```
+
+### Least Square Regression Method For Linear Equations Input
+```
+5
+1 2
+2 4
+3 5
+4 4
+5 5
+
+```
+
+## Least Square Regression Method For Linear Equations Output
+```
+Regression line: y = a + b x
+a = 2.200000
+b = 0.600000
+For x = 6, predicted y = 5.800000
+
+
+
+```
 
