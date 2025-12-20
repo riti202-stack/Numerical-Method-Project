@@ -1699,4 +1699,294 @@ For x = 6, predicted y = 5.800000
 
 
 ```
+## Least Square Regression Method For Transcendental Equations Method
 
+### Least Square Regression Method For Transcendental Equations Theory
+ 
+<details>  
+<summary>Click to expand Theory</summary>  
+<br>
+
+---
+
+&nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Least\ Squares\ Regression\ for\ Transcendental\ Equations}}$
+
+Sometimes transcendental equations (involving exponential, logarithmic, or trigonometric functions) cannot be fitted directly using a simple linear regression model. To apply the least squares method, these equations can often be **linearized** by transforming variables, typically into a form like:
+
+\[
+y = a + b x
+\]
+
+where \(a\) and \(b\) are constants to be determined.
+
+---
+
+### 1. Linearization
+
+- Suppose the transcendental equation is nonlinear in its original form.
+- By applying logarithms, exponentials, or other transformations, it can be converted to a **linear form**.
+- Example: For \(y = Ae^{Bx}\), take natural logarithm:
+
+\[
+\ln y = \ln A + Bx
+\]
+
+Set:
+
+\[
+Y = \ln y, \quad a = \ln A, \quad b = B
+\]
+
+So the linearized equation becomes:
+
+\[
+Y = a + b x
+\]
+
+---
+
+### 2. Least Squares Method Overview
+
+The least squares method finds \(a\) and \(b\) to minimize the sum of squared differences between observed and predicted values:
+
+\[
+S = \sum_{i=1}^n (Y_i - a - b x_i)^2
+\]
+
+Minimizing \(S\) leads to the normal equations:
+
+\[
+\sum Y_i = n a + b \sum x_i
+\]
+\[
+\sum x_i Y_i = a \sum x_i + b \sum x_i^2
+\]
+
+---
+
+### 3. Formulas (Plain Text)
+
+- Number of data points: n  
+- Sum of x-values: sumX = Σ x_i  
+- Sum of y-values (transformed): sumY = Σ Y_i  
+- Sum of x squared: sumX2 = Σ x_i²  
+- Sum of x*y: sumXY = Σ x_i * Y_i
+
+Solve for:
+b = (n * sumXY - sumX * sumY) / (n * sumX2 - (sumX)^2)
+a = (sumY - b * sumX) / n
+
+
+ 
+
+\[
+A = e^a
+\]
+
+for the exponential example.
+
+---
+
+### 4. Procedure
+
+- Transform the original \(y_i\) values into \(Y_i\) using the chosen transformation.  
+- Calculate sums: sumX, sumY, sumX2, sumXY.  
+- Compute \(a\) and \(b\) using above formulas.  
+- Construct the fitted linear equation \(Y = a + b x\).  
+- Back-transform if necessary to original variables.  
+- Use the fitted model for predictions or analysis.
+
+---
+
+### 5. Example
+
+Given data:
+
+| x  | 0.5 | 1.0 | 1.5 | 2.0 | 2.5 |
+|-----|-----|-----|-----|-----|-----|
+| y  | 1.4 | 2.5 | 4.2 | 7.4 | 12.6 |
+
+Assume the model:  
+\[
+y = A e^{B x}
+\]
+
+**Step 1: Linearize by taking natural logarithm:**
+
+\[
+Y = \ln y = \ln A + B x = a + b x
+\]
+
+Calculate \(Y = \ln y\):
+
+| x  | 0.5 | 1.0 | 1.5 | 2.0 | 2.5 |
+|-----|-----|-----|-----|-----|-----|
+| y  | 1.4 | 2.5 | 4.2 | 7.4 | 12.6 |
+| Y=ln y | 0.336 | 0.916 | 1.435 | 2.001 | 2.533 |
+
+**Step 2: Calculate sums**
+
+\[
+n = 5
+\]
+
+\[
+\sum x_i = 0.5 + 1 + 1.5 + 2 + 2.5 = 7.5
+\]
+
+\[
+\sum Y_i = 0.336 + 0.916 + 1.435 + 2.001 + 2.533 = 7.221
+\]
+
+\[
+\sum x_i^2 = 0.5^2 + 1^2 + 1.5^2 + 2^2 + 2.5^2 = 0.25 + 1 + 2.25 + 4 + 6.25 = 13.75
+\]
+
+\[
+\sum x_i Y_i = (0.5)(0.336) + (1)(0.916) + (1.5)(1.435) + (2)(2.001) + (2.5)(2.533) = 0.168 + 0.916 + 2.153 + 4.002 + 6.333 = 13.572
+\]
+
+**Step 3: Calculate \(b\) and \(a\):**
+
+\[
+b = \frac{n \sum x_i Y_i - \sum x_i \sum Y_i}{n \sum x_i^2 - (\sum x_i)^2} 
+= \frac{5 \times 13.572 - 7.5 \times 7.221}{5 \times 13.75 - 7.5^2} 
+= \frac{67.86 - 54.16}{68.75 - 56.25} 
+= \frac{13.7}{12.5} = 1.096
+\]
+
+\[
+a = \frac{\sum Y_i - b \sum x_i}{n} 
+= \frac{7.221 - 1.096 \times 7.5}{5} 
+= \frac{7.221 - 8.22}{5} 
+= \frac{-0.999}{5} = -0.2
+\]
+
+**Step 4: Back-transform**
+
+\[
+A = e^a = e^{-0.2} \approx 0.819
+\]
+
+Final model:
+
+\[
+y = 0.819 e^{1.096 x}
+\]
+
+---
+
+### 6. Applications
+
+- Growth and decay problems  
+- Radioactive decay  
+- Population models  
+- Engineering system responses  
+
+---
+
+</details>
+
+
+
+
+
+### Least Square Regression Method For Transcendental Equations Code
+```cpp
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int n;
+    fin >> n;
+
+    vector<double> x(n), y(n), Y(n);
+    for (int i = 0; i < n; i++) {
+        fin >> x[i] >> y[i];
+        if (y[i] <= 0) {
+            fout << "Error: y values must be positive for logarithm transformation." << endl;
+            return 1;
+        }
+        Y[i] = log(y[i]);  
+    }
+
+    double x_query;
+    fin >> x_query;
+
+    double sumX = 0, sumY = 0, sumX2 = 0, sumXY = 0;
+
+    for (int i = 0; i < n; i++) {
+        sumX += x[i];
+        sumY += Y[i];
+        sumX2 += x[i] * x[i];
+        sumXY += x[i] * Y[i];
+    }
+
+    double denominator = n * sumX2 - sumX * sumX;
+    if (denominator == 0) {
+        fout << "Error: Denominator zero, cannot compute regression coefficients." << endl;
+        return 1;
+    }
+
+    double b = (n * sumXY - sumX * sumY) / denominator;
+    double a = (sumY - b * sumX) / n;
+
+    double A = exp(a);  
+
+    fout << fixed << setprecision(6);
+    fout << "Linearized model: Y = a + b x" << endl;
+    fout << "a = " << a << endl;
+    fout << "b = " << b << endl << endl;
+
+    fout << "Original model: y = A * e^(B * x)" << endl;
+    fout << "A = " << A << endl;
+    fout << "B = " << b << endl << endl;
+
+     
+    double y_query = A * exp(b * x_query);
+    fout << "Predicted y at x = " << x_query << " is " << y_query << endl;
+
+    fin.close();
+    fout.close();
+    return 0;
+}
+
+
+```
+
+### Least Square Regression Method For Transcendental Equations Input
+```
+5
+0.5 1.4
+1.0 2.5
+1.5 4.2
+2.0 7.4
+2.5 12.6
+1.8
+
+
+```
+
+## Least Square Regression Method For Transcendental Equations Output
+```
+Linearized model: Y = a + b x
+a = -0.200000
+b = 1.096000
+
+Original model: y = A * e^(B * x)
+A = 0.818731
+B = 1.096000
+
+Predicted y at x = 1.8 is 5.880737
+
+
+
+
+```
