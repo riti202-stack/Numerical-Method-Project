@@ -8,10 +8,10 @@
       - [input file](#bisection-input)
       - [output file](#bisection-output)
     - [False Position Method](#false-position-method)
-      - [Theory](#false-position-method-theory)
-      - [Code](#false-position-method-code)
-      - [input file](#false-position-method-input-file)
-      - [output file](#false-position-method-output-file)
+      - [Theory](#false-position-theory)
+      - [Code](#false-position-code)
+      - [input file](#false-position-input)
+      - [output file](#false-position-output)
     - [Secant Method](#Secant-method)
       - [Theory](#secant-method-theory)
       - [Code](#secant-method-code)
@@ -256,6 +256,29 @@ Converged in 13 iterations.
 
 	 
  </details>
+
+   ## False Position Method
+
+   ### False Position Theory
+   <details>
+	   <summary>
+		   Click to see Theory
+	   </summary>
+	   <br>
+	   &emsp;&emsp; :blue_book: $\huge\color{magenta}{\mathbf{False Position Method: Theory and Application}}$ : <i>The False Position Method, also known by its Latin name                         Regula Falsi, is an iterative numerical method used to find the roots                                                                                                        of a continuous function f(x) = 0. It is a bracketing method, meaning                                                                                                         it requires two initial guesses that surround the actual root.</i><br>
+	                 <i>While it is similar to the Bisection Method, False Position is                                                                                                                generally more efficient because it uses the values of the                                                                                                                   function to estimate the root's location rather than just                                                                                                                     splitting the interval in half</i>.<br><br>
+  &emsp;&emsp;&emsp; :mortar_board: $\large\color{yellow}{\mathbf{Mathematical Explanation}}$ : The method assumes that over a small enough interval, the function $f(x)$ behaves approximately like a straight line. Instead of picking the midpoint of an interval $[a, b]$, it finds the x-intercept of the straight line (secant line) connecting the points $(a, f(a))$ and $(b, f(b))$.
+
+  The method assumes that over a small enough interval, the function $f(x)$ behaves approximately like a straight line. Instead of picking the midpoint of an interval $[a, b]$, it finds the x-intercept of the straight line (secant line) connecting the points $(a, f(a))$ and $(b, f(b))$.
+
+  &emsp;&emsp;&emsp; :mortar_board: $\large\color{yellow}{\mathbf{Mathematical Explanation}}$ : To find the root of $f(x) = 0$ using False Position:Choose Initial Guesses: Find two points $a$ and $b$ such that $f(a)$ and $f(b)$ have opposite signs (i.e., $f(a) \cdot f(b) < 0$). This ensures a root exists between them.Calculate $x_r$: Use the formula above to find the first estimate.Evaluate the Function: Calculate $f(x_r)$.Update the Interval:If $f(a) \cdot f(x_r) < 0$, the root lies between $a$ and $x_r$. Set $b = x_r$.If $f(a) \cdot f(x_r) > 0$, the root lies between $x_r$ and $b$. Set $a = x_r$.Repeat: Continue the process until the value of $f(x_r)$ is sufficiently close to zero or the change in $x_r$ is smaller than a predefined tolerance.
+
+  
+
+	        
+	   
+	   
+   </details>
 
 
 
