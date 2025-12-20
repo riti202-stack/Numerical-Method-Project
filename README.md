@@ -1048,7 +1048,7 @@ int main() {
 Approximate derivative at x = 0 is 0
 
 ``` 
-#### Numerical Differentiation by Newton’s Backward Interpolation Method Theory
+#### Numerical Differentiation by Newtons Backward Interpolation Method Theory
 <details>
 <summary>Click to expand Theory</summary>
 <br>
@@ -1070,10 +1070,11 @@ Newton’s Backward Interpolation is a **numerical method** used to approximate 
     - Use backward differences to approximate the derivative.
 
 3. $\color{Hotpink}{\mathbf{Notation}}$  
-    - Data points: \((x_0, y_0), (x_1, y_1), ..., (x_n, y_n)\)  
-    - Step size: \(h = x_1 - x_0\) (assumed uniform spacing)  
-    - Define: \(p = \frac{x - x_n}{h}\) (distance from last data point)  
-    - Backward differences: \(\nabla y_n, \nabla^2 y_n, \nabla^3 y_n, \dots\)
+    - Data points: (x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ) 
+    - Step size: h = x₁ - x₀ (assumed uniform spacing)  
+    - Define: p = (x - x_n) / h (distance from last data point)  
+    - Backward differences:∇yₙ, ∇²yₙ, ∇³yₙ, ...
+
 
 4. $\color{Hotpink}{\mathbf{Newton's\ Backward\ Interpolation\ Formula}}$
 
