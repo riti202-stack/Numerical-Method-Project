@@ -54,7 +54,7 @@
       - [Theory](#runge-kutta-method-theory)
       - [Code](#runge-kutta-method-code)
       - [input file](#runge-kutta-method-input-file)
-      - [output file](#runge-kuttan-method-output-file)
+      - [output file](#runge-kutta-method-output-file)
   - [Interpolation Methods](#interpolation-methods)
 
     - [Newtons Forward Interpolation Method](#newtons-forward-interpolation-method)
@@ -73,6 +73,13 @@
         - [Code](#newtons-divided-difference-interpolation-method-code)
         - [input file](#newtons-divided-difference-interpolation-method-input-file)
         - [output file](#newtons-divided-difference-interpolation-method-output-file)
+ - [Neumerical Differentiation solving Methods](#numerical-differentiation-solving-methods)
+
+    - [Neumerical Differentiation By Forward Interpolation Method](#neumerical-differentiation-by-forward-interpolation-method)
+      - [Theory](#neumerical-differentiation-by-forward-interpolation-method-theory)
+      - [Code](#neumerical-differentiation-by-forward-interpolation-method-code)
+      - [input file](#neumerical-differentiation-by-forward-interpolation-method-input-file)
+      - [output file](#neumerical-differentiation-by-forward-interpolation-method-output-file)
 
   ---
 
