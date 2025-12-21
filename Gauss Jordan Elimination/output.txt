@@ -1,0 +1,10 @@
+Matrix after Gauss–Jordan Elimination:
+         1         0         0 -0.844828
+         0         1         0   1.10345
+        -0        -0         1  -0.62069
+
+Result:
+Unique solution
+x1 = -0.844828
+x2 = 1.10345
+x3 = -0.62069
