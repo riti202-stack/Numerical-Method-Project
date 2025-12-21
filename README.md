@@ -718,6 +718,19 @@ Iterations needed = 4
   ```
 </details>
 
+## Newton Raphson Method
+
+### Newton Raphson Theory
+
+<details>
+	   <summary>
+		   Click to see Theory
+	   </summary>
+	   <br>
+	The Newton-Raphson Method is a powerful and widely used iterative numerical method for finding the roots of a nonlinear equation:
+</details>
+
+
 
 
 
