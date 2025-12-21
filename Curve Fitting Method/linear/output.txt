@@ -1,0 +1,4 @@
+Regression line: y = 2.200000 + 0.600000 x
+a = 2.200000
+b = 0.600000
+For x = 1.000000, predicted y = 2.800000

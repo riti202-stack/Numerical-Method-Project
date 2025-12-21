@@ -1,0 +1,1 @@
+Estimated value at x = 2.500000 is 7.250000

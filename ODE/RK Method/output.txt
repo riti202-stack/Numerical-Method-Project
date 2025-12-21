@@ -1,0 +1,2 @@
+For dy/dx = x^2 + y
+Value of y at x = 0.2 is 1.22421

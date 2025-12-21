@@ -1,0 +1,1 @@
+Approximate derivative at x = 0 is 0

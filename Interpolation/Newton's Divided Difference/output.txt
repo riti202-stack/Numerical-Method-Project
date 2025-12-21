@@ -1,0 +1,1 @@
+Interpolated value at x = 3 is 9

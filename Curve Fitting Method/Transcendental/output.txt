@@ -1,0 +1,9 @@
+Linearized model: Y = a + b x
+a = -0.199287
+b = 1.095928
+
+Original model: y = A * e^(B * x)
+A = 0.819315
+B = 1.095928
+
+Predicted y at x = 1.800000 is 5.890749
