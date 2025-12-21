@@ -12,11 +12,11 @@
       - [Code](#false-position-code)
       - [input file](#false-position-input)
       - [output file](#false-position-output)
-    - [Secant Method](#Secant-method)
+    - [Secant Method](#secant-method)
       - [Theory](#secant-method-theory)
       - [Code](#secant-method-code)
-      - [input file](#secant-method-input-file)
-      - [output file](#secant-method-output-file)
+      - [input file](#secant-method-input)
+      - [output file](#secant-method-output)
     - [Newton Raphson Method](#newton-raphson-method)
       - [Theory](#newton-raphson-method-theory)
       - [Code](#newton-raphson-method-code)
@@ -323,7 +323,7 @@ Converged in 13 iterations.
 	   
    </details>
 
-   ###False position code
+   ### False position code
 
    <details>
 	   <summary>
@@ -472,7 +472,7 @@ int main()
 	    
 </details>
 
-### False Position Output
+### False Position output
 
 <details>
 	   <summary>
@@ -509,6 +509,218 @@ Iterations needed = 4
 
 ```
 </details>
+
+## Secant Method
+
+### Secant Method Theory
+
+<details>
+	   <summary>
+		   Click to see Theory
+	   </summary>
+	   <br>
+	The Secant Method is a numerical technique used to find the roots of a nonlinear equation of the form: f(x)=0
+
+It is an iterative method that is an improvement over the Regula-Falsi (False Position) Method, but unlike the Newton-Raphson method, it does not require the derivative of the function. Instead, it uses two initial approximations and constructs a secant line to approximate the root.
+
+​
+
+</details>
+
+
+
+### Secant Method Code
+
+<details>
+	   <summary>
+		   Click to see Theory
+	   </summary>
+	   <br>
+
+```cpp
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+
+int degree;
+double coeff[20];
+int funcType, transChoice;
+
+// Polynomial function
+double poly(double x)
+{
+    double sum = 0;
+    for (int i = 0; i <= degree; i++)
+        sum += coeff[i] * pow(x, degree - i);
+    return sum;
+}
+
+// Transcendental function
+double trans(double x)
+{
+    switch (transChoice)
+    {
+        case 1: return sin(x) - x/2;
+        case 2: return cos(x) - x;
+        case 3: return exp(x) - 3*x;
+        case 4: return log(x) + x - 3;
+        default: return 0;
+    }
+}
+
+// Unified function
+double f(double x)
+{
+    if (funcType == 1)
+        return poly(x);
+    else
+        return trans(x);
+}
+
+int main()
+{
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    if (!fin)
+    {
+        cout << "Error opening input file!" << endl;
+        return 1;
+    }
+
+    double x0, x1, tol;
+    int iteration = 0;
+
+    while (fin >> funcType)
+    {
+        if (funcType == 1)
+        {
+            fin >> degree;
+            for (int i = 0; i <= degree; i++)
+                fin >> coeff[i];
+        }
+        else
+        {
+            fin >> transChoice;
+        }
+
+        fin >> x0 >> x1;
+        fin >> tol;
+
+        fout << "Function Type: " << (funcType == 1 ? "Polynomial" : "Transcendental") << endl;
+        if (funcType == 2)
+            fout << "Choice: " << transChoice << endl;
+
+        fout << "Iter\t x0\t\t x1\t\t x2\t\t f(x2)\n";
+
+        iteration = 0;
+        double x2;
+
+        while (true)
+        {
+            iteration++;
+
+            double f0 = f(x0);
+            double f1 = f(x1);
+
+            if (f1 - f0 == 0)
+            {
+                fout << "Division by zero encountered!" << endl;
+                break;
+            }
+
+            x2 = x1 - f1*(x1 - x0)/(f1 - f0);
+
+            fout << iteration << "\t"
+                 << x0 << "\t"
+                 << x1 << "\t"
+                 << x2 << "\t"
+                 << f(x2) << endl;
+
+            if (fabs(f(x2)) < tol)
+            {
+                fout << "\nRoot = " << x2 << endl;
+                fout << "Iterations needed = " << iteration << endl << endl;
+                break;
+            }
+
+            // Update for next iteration
+            x0 = x1;
+            x1 = x2;
+        }
+    }
+
+    fin.close();
+    fout.close();
+
+    return 0;
+}
+
+
+```
+</details>
+
+### Secant Method input
+
+<details>
+	   <summary>
+		   Click to see Theory
+	   </summary>
+	   <br>
+       
+```
+	   1           
+       3           
+       1 0 -1 -2   
+       1 2         
+       0.0001     
+       2           
+       1          
+      1 2         
+      0.0001
+      
+```
+
+</details>
+
+### Secant Method output
+<details>
+	   <summary>
+		   Click to see Theory
+	   </summary>
+	   <br>
+	
+  ```
+Function Type: Polynomial
+Iter	 x0		 x1		 x2		 f(x2)
+1	1	2	1.33333	-0.962963
+2	2	1.33333	1.46269	-0.333339
+3	1.33333	1.46269	1.53117	0.0586264
+4	1.46269	1.53117	1.52093	-0.0026933
+5	1.53117	1.52093	1.52138	-2.01502e-005
+
+Root = 1.52138
+Iterations needed = 5
+
+Function Type: Transcendental
+Choice: 1
+Iter	 x0		 x1		 x2		 f(x2)
+1	1	2	1.79012	0.0809815
+2	2	1.79012	1.88912	0.00520096
+3	1.79012	1.88912	1.89591	-0.000344523
+4	1.88912	1.89591	1.89549	1.27544e-006
+
+Root = 1.89549
+Iterations needed = 4
+
+
+  ```
+</details>
+
+
+
+
 
 
 
