@@ -514,6 +514,8 @@ Iterations needed = 4
 ```
 </details>
 
+ - [Back To Contents](#table-of-contents)
+
 ## Secant Method
 
 ### Secant Method Theory
@@ -721,6 +723,8 @@ Iterations needed = 4
 
   ```
 </details>
+
+ - [Back To Contents](#table-of-contents)
 
 ## Newton Raphson Method
 
@@ -957,6 +961,8 @@ Iterations needed = 12
 ```
 	
 </details>
+ 
+ - [Back To Contents](#table-of-contents)
 
 ---
 # Linear Equation Solving System
@@ -1149,6 +1155,8 @@ x3 = -0.62069
 	
 </details>
 
+ - [Back To Contents](#table-of-contents)
+
 ### Gauss Elimination Code
 
 <details>
@@ -1302,6 +1310,8 @@ x3 = -0.62069
 ```
 	
 </details>
+
+ - [Back To Contents](#table-of-contents)
 
 
 ## Gauss Jordan Elimination Method
@@ -1467,6 +1477,8 @@ x3 = -0.62069
 ```
 	
 </details>
+
+ - [Back To Contents](#table-of-contents)
 
 ## Matrix Inversion
 
@@ -1679,6 +1691,8 @@ x3 = -0.62069
 
 ```
 </details>
+ 
+ - [Back To Contents](#table-of-contents)
 
 
 
@@ -1810,6 +1824,8 @@ int main()
  For dy/dx = x^2 + y
 Value of y at x = 0.2 is 1.253
 ```
+
+ - [Back To Contents](#table-of-contents)
 
   # Interpolation Methods
 
@@ -2118,7 +2134,8 @@ int main() {
 
 ```
 Estimated value at x = 2.5 is 7.25
-```  
+```
+ - [Back To Contents](#table-of-contents)
 
 #### Newtons Divided Difference Interpolation Method Theory
 <details>
@@ -2273,6 +2290,7 @@ int main() {
 Interpolated value at x = 3 is 9
 
 ```
+ - [Back To Contents](#table-of-contents)
 
 # Neumerical Differentiation solving Methods 
 ## Neumerical Differentiation By Forward Interpolation Method
@@ -2451,7 +2469,9 @@ int main() {
 ```
 Approximate derivative at x = 0 is 0
 
-``` 
+```
+ - [Back To Contents](#table-of-contents)
+
 #### Neumerical Differentiation By Backward Interpolation Method Theory
 <details>
 <summary>Click to expand Theory</summary>
@@ -2623,7 +2643,10 @@ int main() {
 Approximate derivative at x = 3 is 6
 
 
-``` 
+```
+ 
+ - [Back To Contents](#table-of-contents)
+
 # Solution of Numerical Integrations
 ## Simpsons One-Third Rule
 ### Simpsons One-Third Rule Theory
@@ -2767,6 +2790,8 @@ int main() {
 Approximate integral value is 6
 
 ```
+ - [Back To Contents](#table-of-contents)
+
 ### Simpsons Three-Eighths Rule Theory
 
  
@@ -2897,6 +2922,9 @@ Approximate integral value is 20.25
 
 
 ```
+
+ - [Back To Contents](#table-of-contents)
+
 # Solution of Curve Fitting Model
 
 ## Least Square Regression Method For Linear Equations Method
@@ -3077,6 +3105,8 @@ For x = 6, predicted y = 5.800000
 
 
 ```
+ - [Back To Contents](#table-of-contents)
+
 ## Least Square Regression Method For Transcendental Equations Method
 
 ### Least Square Regression Method For Transcendental Equations Theory
@@ -3343,3 +3373,4 @@ Predicted y at x = 1.8 is 5.880737
 
 
 ```
+ - [Back To Contents](#table-of-contents)
