@@ -18,10 +18,10 @@
       - [input file](#secant-method-input)
       - [output file](#secant-method-output)
     - [Newton Raphson Method](#newton-raphson-method)
-      - [Theory](#newton-raphson-method-theory)
-      - [Code](#newton-raphson-method-code)
-      - [input file](#newton-raphson-method-input-file)
-      - [output file](#newton-raphson-method-output-file)
+      - [Theory](#newton-raphson-theory)
+      - [Code](#newton-raphson-code)
+      - [input file](#newton-raphson-input)
+      - [output file](#newton-raphson-output)
         
  - [Linear Equation Solving System](#linear-equation-solving-system)
     - [LU Decomposition Method](#lu-decomposition)
@@ -729,6 +729,236 @@ Iterations needed = 4
 	   <br>
 	The Newton-Raphson Method is a powerful and widely used iterative numerical method for finding the roots of a nonlinear equation:
 </details>
+
+### Newton Raphson code
+
+<details>
+	   <summary>
+		   Click to see code
+	   </summary>
+	   <br>
+
+```cpp
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+
+int degree;
+double coeff[20];
+int funcType, transChoice;
+
+// Polynomial function
+double poly(double x)
+{
+    double sum = 0;
+    for (int i = 0; i <= degree; i++)
+        sum += coeff[i] * pow(x, degree - i);
+    return sum;
+}
+
+// Derivative of polynomial
+double poly_derivative(double x)
+{
+    double sum = 0;
+    for (int i = 0; i < degree; i++)
+        sum += coeff[i] * (degree - i) * pow(x, degree - i - 1);
+    return sum;
+}
+
+// Transcendental function
+double trans(double x)
+{
+    switch (transChoice)
+    {
+        case 1: return sin(x) - x/2;
+        case 2: return cos(x) - x;
+        case 3: return exp(x) - 3*x;
+        case 4: return log(x) + x - 3;
+        default: return 0;
+    }
+}
+
+// Derivative of transcendental function
+double trans_derivative(double x)
+{
+    switch (transChoice)
+    {
+        case 1: return cos(x) - 0.5;
+        case 2: return -sin(x) - 1;
+        case 3: return exp(x) - 3;
+        case 4: return 1/x + 1;
+        default: return 0;
+    }
+}
+
+// Unified function
+double f(double x)
+{
+    if (funcType == 1)
+        return poly(x);
+    else
+        return trans(x);
+}
+
+// Unified derivative
+double df(double x)
+{
+    if (funcType == 1)
+        return poly_derivative(x);
+    else
+        return trans_derivative(x);
+}
+
+int main()
+{
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    if (!fin)
+    {
+        cout << "Error opening input file!" << endl;
+        return 1;
+    }
+
+    double x0, tol;
+    int iteration = 0;
+
+    while (fin >> funcType)
+    {
+        if (funcType == 1)
+        {
+            fin >> degree;
+            for (int i = 0; i <= degree; i++)
+                fin >> coeff[i];
+        }
+        else
+        {
+            fin >> transChoice;
+        }
+
+        fin >> x0 >> tol;
+
+        fout << "Function Type: " << (funcType == 1 ? "Polynomial" : "Transcendental") << endl;
+        if (funcType == 2)
+            fout << "Choice: " << transChoice << endl;
+
+        fout << "Iter\t x0\t\t x1\t\t f(x1)\n";
+
+        iteration = 0;
+        double x1;
+
+        while (true)
+        {
+            iteration++;
+            double f0 = f(x0);
+            double df0 = df(x0);
+
+            if (df0 == 0)
+            {
+                fout << "Derivative zero encountered! Cannot proceed." << endl;
+                break;
+            }
+
+            x1 = x0 - f0 / df0;
+
+            fout << iteration << "\t"
+                 << x0 << "\t"
+                 << x1 << "\t"
+                 << f(x1) << endl;
+
+            if (fabs(f(x1)) < tol)
+            {
+                fout << "\nRoot = " << x1 << endl;
+                fout << "Iterations needed = " << iteration << endl << endl;
+                break;
+            }
+
+            x0 = x1;  // Update for next iteration
+        }
+    }
+
+    fin.close();
+    fout.close();
+    return 0;
+}
+
+
+
+```
+</details>
+
+### Newton Raphson input
+
+<details>
+	   <summary>
+		   Click to see input
+	   </summary>
+	   <br>
+	
+```
+1           
+3           
+1 0 -1 -2   
+2           
+0.0001      
+2           
+1           
+1           
+0.0001      
+
+```
+	
+</details>
+
+### Newton Raphson output
+
+<details>
+	   <summary>
+		   Click to see output
+	   </summary>
+	   <br>
+	   
+```
+Function Type: Polynomial
+Iter	 x0		 x1		 f(x1)
+1	2	1.63636	0.745304
+2	1.63636	1.53039	0.0539389
+3	1.53039	1.52144	0.000367096
+4	1.52144	1.52138	1.74069e-008
+
+Root = 1.52138
+Iterations needed = 4
+
+Function Type: Transcendental
+Choice: 1
+Iter	 x0		 x1		 f(x1)
+1	1	-7.47274	2.80817
+2	-7.47274	14.4785	-6.29696
+3	14.4785	6.93512	-2.86084
+4	6.93512	16.6357	-9.1181
+5	16.6357	8.34394	-3.28962
+6	8.34394	4.95463	-3.44812
+7	4.95463	-8.30132	3.24906
+8	-8.30132	-4.81732	3.40316
+9	-4.81732	3.79257	-2.50225
+10	3.79257	1.86106	0.0276377
+11	1.86106	1.89621	-0.000589896
+12	1.89621	1.89549	-2.45373e-007
+
+Root = 1.89549
+Iterations needed = 12
+
+
+```
+	
+</details>
+
+
+
+
+
+
 
 
 
