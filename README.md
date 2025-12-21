@@ -3400,3 +3400,189 @@ Predicted y at x = 1.8 is 5.880737
 
 ```
  - [Back To Contents](#table-of-contents)
+## Least Square Regression Method For Polynomial Equations Method
+
+### Least Square Regression Method For Polynomial Equations Theory
+<details>
+<summary>Click to expand Theory</summary>
+<br>
+
+---
+
+&nbsp;&nbsp;&nbsp;&nbsp; 📘 $\huge\color{green}{\mathbf{Least\ Squares\ Regression\ for\ Polynomial\ Equations\ (Inverse\ Matrix\ Method)}}$
+
+---
+
+## $\color{Hotpink}{\mathbf{Polynomial\ Model}}$
+
+Assume a polynomial of degree \(m\):
+
+\[
+y = a_0 + a_1 x + a_2 x^2 + \cdots + a_m x^m
+\]
+
+where \(a_0, a_1, \dots, a_m\) are constants.
+
+---
+
+## $\color{Hotpink}{\mathbf{Least\ Squares\ Criterion}}$
+
+The error function is:
+
+\[
+S = (y_1 - \hat y_1)^2 + (y_2 - \hat y_2)^2 + (y_3 - \hat y_3)^2 + \cdots + (y_n - \hat y_n)^2
+\]
+
+where
+
+\[
+\hat y_i = a_0 + a_1 x_i + a_2 x_i^2 + \cdots + a_m x_i^m
+\]
+
+---
+
+## $\color{Hotpink}{\mathbf{Matrix\ Formulation}}$
+
+Define the matrices:
+
+\[
+A =
+\begin{bmatrix}
+1 & x_1 & x_1^2 \\
+1 & x_2 & x_2^2 \\
+\vdots & \vdots & \vdots \\
+1 & x_n & x_n^2
+\end{bmatrix}
+\]
+
+\[
+X =
+\begin{bmatrix}
+a_0 \\
+a_1 \\
+a_2
+\end{bmatrix}
+\quad
+Y =
+\begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{bmatrix}
+\]
+
+The normal equation is:
+
+\[
+A^T A X = A^T Y
+\]
+
+---
+
+## $\color{Hotpink}{\mathbf{Inverse\ Matrix\ Method}}$
+
+If \(A^T A\) is invertible, then:
+
+\[
+X = (A^T A)^{-1} A^T Y
+\]
+
+This gives the polynomial coefficients.
+
+---
+
+## $\color{Hotpink}{\mathbf{Worked\ Example\ (Quadratic\ Fit)}}$
+
+Given data:
+
+| x | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|
+| y | 2 | 5 | 10 | 17 |
+
+Assume:
+
+\[
+y = a_0 + a_1 x + a_2 x^2
+\]
+
+---
+
+### $\color{Hotpink}{\mathbf{Step\ 1:\ Construct\ Matrices}}$
+
+\[
+A =
+\begin{bmatrix}
+1 & 1 & 1 \\
+1 & 2 & 4 \\
+1 & 3 & 9 \\
+1 & 4 & 16
+\end{bmatrix}
+\]
+
+\[
+Y =
+\begin{bmatrix}
+2 \\
+5 \\
+10 \\
+17
+\end{bmatrix}
+\]
+
+---
+
+### $\color{Hotpink}{\mathbf{Step\ 2:\ Normal\ Equation}}$
+
+\[
+A^T A =
+\begin{bmatrix}
+4 & 10 & 30 \\
+10 & 30 & 100 \\
+30 & 100 & 354
+\end{bmatrix}
+\]
+
+\[
+A^T Y =
+\begin{bmatrix}
+34 \\
+110 \\
+384
+\end{bmatrix}
+\]
+
+---
+
+### $\color{Hotpink}{\mathbf{Step\ 3:\ Solve}}$
+
+\[
+X = (A^T A)^{-1} A^T Y
+\]
+
+Solution:
+
+\[
+a_0 = 1,\quad a_1 = 0,\quad a_2 = 1
+\]
+
+---
+
+## $\color{Hotpink}{\mathbf{Final\ Polynomial\ Model}}$
+
+\[
+\boxed{y = 1 + x^2}
+\]
+
+---
+
+## $\color{Hotpink}{\mathbf{Applications}}$
+
+- Data fitting  
+- Engineering modeling  
+- Numerical methods  
+- Trend analysis  
+
+---
+
+</details>
