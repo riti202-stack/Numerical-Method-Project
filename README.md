@@ -149,18 +149,10 @@
 
 
 	  ![bisection-img](./bisection.png)
-3. $\large\color{Hotpink}{\mathbf{Discussion}}$ : The Bisection Method is widely used in science and engineering to solve nonlinear equations, polynomials, and transcendental functions. In electrical engineering, it helps find operating points in circuits, while in mechanical engineering it is applied to vibrations, stress analysis, and dynamics. It is also used in control systems to determine stable parameters and in physics and chemistry to find equilibrium points and reaction constants. The method is highly reliable and stable, as it guarantees convergence if the initial interval satisfies the sign-change condition. Although its convergence is relatively slow compared to other methods, its simplicity, robustness, and predictable error control make it very effective. Overall, the Bisection Method is a dependable root-finding tool, often used as a preliminary step before applying faster numerical methods.
 
 
-| Iteration | a     | b     | c = (a+b)/2 | f(c)   | New Interval   |
-| --------- | ----- | ----- | ----------- |  ----- | -------------- |
-| 1         | 1.000 | 2.000 | 1.500       | -0.125 | [1.5, 2]       |
-| 2         | 1.500 | 2.000 | 1.750       | 1.609  | [1.5, 1.75]    |
-| 3         | 1.500 | 1.750 | 1.625       | 0.666  | [1.5, 1.625]   |
-| 4         | 1.500 | 1.625 | 1.563       | 0.252  | [1.5, 1.563]   |
-| 5         | 1.500 | 1.563 | 1.531       | 0.059  | [1.5, 1.531]   |
-| 6         | 1.500 | 1.531 | 1.516       | -0.034 | [1.516, 1.531] |
-| 7         | 1.516 | 1.531 | 1.523       | 0.012  | [1.516, 1.523] |
+
+
 
 
    
@@ -265,11 +257,7 @@ int main() {
   0.0001
   ```
 <br> 
-Here at first line   
-      we take the assumed interval a,b as input and in second line 
-	  the value of tolarence is taken as input <br>
-	 
- </details>
+</details>
 
  #### Bisection Output
 
@@ -312,13 +300,12 @@ Converged in 13 iterations.
 		   Click to see Theory
 	   </summary>
 	   <br>
-	   &emsp;&emsp; :blue_book: $\huge\color{magenta}{\mathbf{False Position Method: Theory and Application}}$ : <i>The False Position Method, also known by its Latin name                         Regula Falsi, is an iterative numerical method used to find the roots                                                                                                        of a continuous function f(x) = 0. It is a bracketing method, meaning                                                                                                         it requires two initial guesses that surround the actual root.</i><br>
-	                 <i>While it is similar to the Bisection Method, False Position is                                                                                                                generally more efficient because it uses the values of the                                                                                                                   function to estimate the root's location rather than just                                                                                                                     splitting the interval in half</i>.<br><br>
-  &emsp;&emsp;&emsp; :mortar_board: $\large\color{yellow}{\mathbf{Mathematical Explanation}}$ : The method assumes that over a small enough interval, the function $f(x)$ behaves approximately like a straight line. Instead of picking the midpoint of an interval $[a, b]$, it finds the x-intercept of the straight line (secant line) connecting the points $(a, f(a))$ and $(b, f(b))$.
+	   &emsp; :blue_book: <b>False Position Theory and Application</b> : <i>The False Position Method, also known by its Latin name                         Regula Falsi, is an iterative numerical method used to find the roots          of a continuous function f(x) = 0. It is a bracketing method, meaning it requires two initial guesses that surround the actual root<br>While it is similar to the Bisection Method, False Position is generally more efficient because it uses the values of the function to estimate the root's location rather than just splitting the interval in half</i>
+  &emsp; :mortar_board: $\large\color{yellow}{\mathbf{Mathematical Explanation}}$ : The method assumes that over a small enough interval, the function $f(x)$ behaves approximately like a straight line. Instead of picking the midpoint of an interval $[a, b]$, it finds the x-intercept of the straight line (secant line) connecting the points $(a, f(a))$ and $(b, f(b))$.
 
   The method assumes that over a small enough interval, the function $f(x)$ behaves approximately like a straight line. Instead of picking the midpoint of an interval $[a, b]$, it finds the x-intercept of the straight line (secant line) connecting the points $(a, f(a))$ and $(b, f(b))$.
 
-  &emsp;&emsp;&emsp; :mortar_board: $\large\color{yellow}{\mathbf{Mathematical Explanation}}$ : To find the root of f(x) = 0 using False Position:Choose Initial Guesses: Find two points $a$ and $b$ such that $f(a)$ and $f(b)$ have opposite signs (i.e., f(a) * f(b) < 0). This ensures a root exists between them.Calculate x_r: Use the formula above to find the first estimate.Evaluate the Function: Calculate $f(x_r)$.Update the Interval:If f(a) * f(x_r) < 0, the root lies between a and x_r. Set b = x_r.If f(a) * f(x_r) > 0, the root lies between x_r$and b. Set a = x_r.Repeat: Continue the process until the value of f(x_r) is sufficiently close to zero or the change in x_r is smaller than a predefined tolerance.
+ 
 
   
 
