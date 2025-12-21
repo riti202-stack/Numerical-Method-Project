@@ -760,7 +760,22 @@ Iterations needed = 4
 		   Click to see Theory
 	   </summary>
 	   <br>
-	The Newton-Raphson Method is a powerful and widely used iterative numerical method for finding the roots of a nonlinear equation:
+	The Newton-Raphson Method is a powerful and widely used iterative numerical method for finding the roots of a nonlinear equation: f(x)=0. <br> It is also called the Newton Method. Unlike methods like bisection, it uses the derivative of the function to quickly approximate the root.<br>
+	
+*Basic Idea* : <br>
+	1. if we have a function f(x) and initial guess x0 close to the actual root.
+	2. the tangent line at(x0,f(x0)) is drawn.<br>
+	3. The x-intercept of this tangent line becomes the next approximation x1.<br> This process is repeated iteratively until convergence.<br>
+	if x<sub>n+1</sub> = x<sub>n</sub> -(f(x<sub>n</sub>)/f'(x<sub>n</sub>)).<br>
+	Where: <br>
+	    &emsp; f'(x<sub>n</sub>) = derivative of f(x) at x<sub>n</sub><br>
+		&emsp; x<sub>n+1</sub> = next approximation.<br>
+
+**Algorithm/Steps** :
+1.Choose an initial guess x0 near the 
+
+
+
 	
 </details>
 
