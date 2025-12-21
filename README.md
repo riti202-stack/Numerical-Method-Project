@@ -323,6 +323,193 @@ Converged in 13 iterations.
 	   
    </details>
 
+   ###False position code
+
+   <details>
+	   <summary>
+		   Click to see Code
+	   </summary>
+	   <br>
+
+```cpp
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+
+int degree;
+double coeff[20];
+int funcType, transChoice;
+double a, b, tol;
+
+// Polynomial evaluation
+double poly(double x)
+{
+    double sum = 0;
+    for (int i = 0; i <= degree; i++)
+        sum += coeff[i] * pow(x, degree - i);
+    return sum;
+}
+
+// Transcendental evaluation
+double trans(double x)
+{
+    switch (transChoice)
+    {
+        case 1: return sin(x) - x / 2;
+        case 2: return cos(x) - x;
+        case 3: return exp(x) - 3 * x;
+        case 4: return log(x) + x - 3;
+        default: return 0;
+    }
+}
+
+// Unified function
+double f(double x)
+{
+    if (funcType == 1)
+        return poly(x);
+    else
+        return trans(x);
+}
+
+int main()
+{
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    if (!fin)
+    {
+        cout << "Error opening input file!" << endl;
+        return 1;
+    }
+
+    int iteration = 0;
+
+    while (fin >> funcType)
+    {
+        if (funcType == 1)
+        {
+            fin >> degree;
+            for (int i = 0; i <= degree; i++)
+                fin >> coeff[i];
+        }
+        else
+        {
+            fin >> transChoice;
+        }
+
+        fin >> a >> b;
+        fin >> tol;
+
+        if (f(a) * f(b) >= 0)
+        {
+            fout << "False Position method not applicable for this function." << endl << endl;
+            continue;
+        }
+
+        fout << "Function Type: " << (funcType == 1 ? "Polynomial" : "Transcendental") << endl;
+        if (funcType == 2)
+            fout << "Choice: " << transChoice << endl;
+        fout << "Iter\t a\t\t b\t\t c\t\t f(c)\n";
+
+        iteration = 0;
+        double c;
+
+        while (true)
+        {
+            iteration++;
+            c = (a * f(b) - b * f(a)) / (f(b) - f(a));
+
+            fout << iteration << "\t"
+                 << a << "\t"
+                 << b << "\t"
+                 << c << "\t"
+                 << f(c) << endl;
+
+            if (fabs(f(c)) < tol)
+            {
+                fout << "\nRoot = " << c << endl;
+                fout << "Iterations needed = " << iteration << endl << endl;
+                break;
+            }
+
+            if (f(a) * f(c) < 0)
+                b = c;
+            else
+                a = c;
+        }
+    }
+
+    fin.close();
+    fout.close();
+    return 0;
+}
+
+
+```
+   </details>
+
+   ### False Position input
+   <details>
+	   <summary>
+		   Click to see Code
+	   </summary>
+	   <br>
+    
+```
+1           
+3           
+1 0 -1 -2   
+1 2         
+0.0001    
+2           
+1           
+1 2         
+0.0001     
+```
+	   
+	    
+</details>
+
+### False Position Output
+
+<details>
+	   <summary>
+		   Click to see Code
+	   </summary>
+	   <br>
+
+```
+	Function Type: Polynomial
+Iter	 a		 b		 c		 f(c)
+1	1	2	1.33333	-0.962963
+2	1.33333	2	1.46269	-0.333339
+3	1.46269	2	1.50402	-0.101818
+4	1.50402	2	1.51633	-0.0298948
+5	1.51633	2	1.51992	-0.00867507
+6	1.51992	2	1.52096	-0.00250881
+7	1.52096	2	1.52126	-0.000724823
+8	1.52126	2	1.52134	-0.00020935
+9	1.52134	2	1.52137	-6.04613e-005
+
+Root = 1.52137
+Iterations needed = 9
+
+Function Type: Transcendental
+Choice: 1
+Iter	 a		 b		 c		 f(c)
+1	1	2	1.79012	0.0809815
+2	1.79012	2	1.88912	0.00520096
+3	1.88912	2	1.89513	0.00029528
+4	1.89513	2	1.89547	1.66428e-005
+
+Root = 1.89547
+Iterations needed = 4
+
+```
+</details>
+
 
 
  # Ordinary Differential Equation solving Methods
