@@ -24,17 +24,17 @@
       - [output file](#newton-raphson-output)
         
  - [Linear Equation Solving System](#linear-equation-solving-system)
-    - [LU Decomposition Method](#lu-decomposition)
+    - [LU Decomposition Method](#lu-decomposition-method)
        - [Theory](#lu-decomposition-theory)
        - [Code](#lu-decomposition-code)
        - [Input file](#lu-decomposition-input)
        - [Output file](#lu-decomposition-theory)
-     - [Gauss Elimination Method](#gauss-elimination)
+     - [Gauss Elimination Method](#gauss-elimination-method)
         - [Theory](#gauss-elimination-theory)
-        - [Code](#lgauss-elimination-code)
+        - [Code](#gauss-elimination-code)
         - [Input file](#gauss-elimination-input)
         - [Output file](#gauss-elimination-output)
-      - [Gauss Jordan Elimination Mrthod](#gauss-jordan-elimonation)
+      - [Gauss Jordan Elimination Method](#gauss-jordan-elimination-method)
          - [Theory](#gauss-jordan-elimination-theory)
          - [Code](#gauss-jordan-elimination-code)
          - [Input file](#gauss-jordan-elimination-input)
@@ -42,9 +42,9 @@
 
       - [Matrix Inversion](#matrix-inversion)
          - [Theory](#matrix-inversion-theory)
-         - [Code](#matrix-inversion-theory)
-         - [Input file](#matrix-inversion-theory)
-         - [Output file](#matrix-inversion-theory)
+         - [Code](#matrix-inversion-code)
+         - [Input file](#matrix-inversion-input)
+         - [Output file](#matrix-inversion-output)
 
 ---
  
@@ -953,6 +953,738 @@ Iterations needed = 12
 ```
 	
 </details>
+
+---
+# Linear Equation Solving System
+## LU Decomposition Method
+
+### LU Decomposition theory
+
+<details>
+	   <summary>
+		   Click to see theory
+	   </summary>
+	   <br>
+	
+</details>
+
+### LU Decomposition Code
+
+<details>
+	   <summary>
+		   Click to see theory
+	   </summary>
+	   <br>
+	   
+```cpp
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int n;
+    fin >> n;
+
+    double A[20][20], L[20][20] = {0}, U[20][20] = {0};
+    double b[20], y[20], x[20];
+
+    // Read matrix A
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            fin >> A[i][j];
+
+    // Read vector b
+    for (int i = 0; i < n; i++)
+        fin >> b[i];
+
+    // LU Decomposition (Doolittle)
+    for (int i = 0; i < n; i++)
+    {
+        // Upper triangular U
+        for (int k = i; k < n; k++)
+        {
+            double sum = 0;
+            for (int j = 0; j < i; j++)
+                sum += L[i][j] * U[j][k];
+
+            U[i][k] = A[i][k] - sum;
+        }
+
+        // Lower triangular L
+        for (int k = i; k < n; k++)
+        {
+            if (i == k)
+                L[i][i] = 1;   // Diagonal as 1
+            else
+            {
+                double sum = 0;
+                for (int j = 0; j < i; j++)
+                    sum += L[k][j] * U[j][i];
+
+                L[k][i] = (A[k][i] - sum) / U[i][i];
+            }
+        }
+    }
+
+    // Print L matrix
+    fout << "Lower Triangular Matrix (L):\n";
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+            fout << setw(10) << L[i][j];
+        fout << endl;
+    }
+
+    // Print U matrix
+    fout << "\nUpper Triangular Matrix (U):\n";
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+            fout << setw(10) << U[i][j];
+        fout << endl;
+    }
+
+    // Forward substitution: Ly = b
+    for (int i = 0; i < n; i++)
+    {
+        double sum = 0;
+        for (int j = 0; j < i; j++)
+            sum += L[i][j] * y[j];
+
+        y[i] = b[i] - sum;
+    }
+
+    // Backward substitution: Ux = y
+    for (int i = n - 1; i >= 0; i--)
+    {
+        double sum = 0;
+        for (int j = i + 1; j < n; j++)
+            sum += U[i][j] * x[j];
+
+        x[i] = (y[i] - sum) / U[i][i];
+    }
+
+    // Print solution
+    fout << "\nSolution Vector (x):\n";
+    for (int i = 0; i < n; i++)
+        fout << "x" << i + 1 << " = " << x[i] << endl;
+
+    fin.close();
+    fout.close();
+
+    return 0;
+}
+
+```
+	
+</details>
+
+
+### LU Decomposition Input
+
+<details>
+	   <summary>
+		   Click to see theory
+	   </summary>
+	   <br>
+
+```
+3
+2 3 1
+4 7 7
+-2 4 5
+1 0 3
+
+```
+	
+</details>
+
+
+### LU Decomposition Output
+
+<details>
+	   <summary>
+		   Click to see theory
+	   </summary>
+	   <br>
+	   
+```
+	Lower Triangular Matrix (L):
+         1         0         0
+         2         1         0
+        -1         7         1
+
+Upper Triangular Matrix (U):
+         2         3         1
+         0         1         5
+         0         0       -29
+
+Solution Vector (x):
+x1 = -0.844828
+x2 = 1.10345
+x3 = -0.62069
+
+```
+	
+</details>
+
+## Gauss Elimination Method
+
+### Gauss Elimination Theory
+
+<details>
+	   <summary>
+		   Click to see theory
+	   </summary>
+	   <br>
+	
+</details>
+
+### Gauss Elimination Code
+
+<details>
+	   <summary>
+		   Click to see Code
+	   </summary>
+	   <br>
+	   
+```cpp
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int n;
+    fin >> n;
+
+    double a[20][21];
+
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j <= n; j++)
+            fin >> a[i][j];
+
+    // Forward elimination
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int k = i + 1; k < n; k++)
+        {
+            if (fabs(a[i][i]) < 1e-9) continue;
+            double factor = a[k][i] / a[i][i];
+            for (int j = i; j <= n; j++)
+                a[k][j] -= factor * a[i][j];
+        }
+    }
+
+    // Print matrix after elimination
+    fout << "Matrix after Gauss Elimination:\n";
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j <= n; j++)
+            fout << setw(10) << a[i][j];
+        fout << endl;
+    }
+
+    int rankA = 0, rankAug = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        bool nonZeroA = false;
+        for (int j = 0; j < n; j++)
+            if (fabs(a[i][j]) > 1e-9)
+                nonZeroA = true;
+
+        if (nonZeroA) rankA++;
+
+        if (nonZeroA || fabs(a[i][n]) > 1e-9)
+            rankAug++;
+    }
+
+    fout << "\nResult:\n";
+    if (rankA < rankAug)
+    {
+        fout << "No solution\n";
+    }
+    else if (rankA == rankAug && rankA < n)
+    {
+        fout << "Infinitely many solutions\n";
+    }
+    else
+    {
+        fout << "Unique solution\n";
+
+        double x[20];
+        for (int i = n - 1; i >= 0; i--)
+        {
+            x[i] = a[i][n];
+            for (int j = i + 1; j < n; j++)
+                x[i] -= a[i][j] * x[j];
+            x[i] /= a[i][i];
+        }
+
+        for (int i = 0; i < n; i++)
+            fout << "x" << i + 1 << " = " << x[i] << endl;
+    }
+
+    return 0;
+}
+
+ ```
+	
+</details>
+
+### Gauss Elimination Input
+
+<details>
+	   <summary>
+		   Click to see theory
+	   </summary>
+	   <br>
+	   
+```
+3
+2 3 1 1
+4 7 7 0
+-2 4 5 3
+
+```
+```
+2
+1 1 2
+2 2 4
+
+```
+```
+2
+1 1 2
+2 2 5
+
+```
+	
+</details>
+
+
+### Gauss Elimination Output
+
+<details>
+	   <summary>
+		   Click to see theory
+	   </summary>
+	   <br>
+	   
+```
+	Matrix after Gauss Elimination:
+         2         3         1         1
+         0         1         5        -2
+         0         0       -29        18
+
+Result:
+Unique solution
+x1 = -0.844828
+x2 = 1.10345
+x3 = -0.62069
+
+
+```
+	
+</details>
+
+
+## Gauss Jordan Elimination Method
+
+### Gauss Jordan Elimination Theory
+
+<details>
+	   <summary>
+		   Click to see theory
+	   </summary>
+	   <br>
+	
+</details>
+
+### Gauss Jordan Elimination Code
+
+<details>
+	   <summary>
+		   Click to see Code
+	   </summary>
+	   <br>
+	   
+```cpp
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int n;
+    fin >> n;
+
+    double a[20][21];
+
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j <= n; j++)
+            fin >> a[i][j];
+
+    // Gauss–Jordan elimination
+    for (int i = 0; i < n; i++)
+    {
+        if (fabs(a[i][i]) < 1e-9) continue;
+
+        double pivot = a[i][i];
+        for (int j = 0; j <= n; j++)
+            a[i][j] /= pivot;
+
+        for (int k = 0; k < n; k++)
+        {
+            if (k == i) continue;
+            double factor = a[k][i];
+            for (int j = 0; j <= n; j++)
+                a[k][j] -= factor * a[i][j];
+        }
+    }
+
+    // Print matrix after elimination
+    fout << "Matrix after Gauss–Jordan Elimination:\n";
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j <= n; j++)
+            fout << setw(10) << a[i][j];
+        fout << endl;
+    }
+
+    int rankA = 0, rankAug = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        bool nonZeroA = false;
+        for (int j = 0; j < n; j++)
+            if (fabs(a[i][j]) > 1e-9)
+                nonZeroA = true;
+
+        if (nonZeroA) rankA++;
+
+        if (nonZeroA || fabs(a[i][n]) > 1e-9)
+            rankAug++;
+    }
+
+    fout << "\nResult:\n";
+    if (rankA < rankAug)
+    {
+        fout << "No solution\n";
+    }
+    else if (rankA == rankAug && rankA < n)
+    {
+        fout << "Infinitely many solutions\n";
+    }
+    else
+    {
+        fout << "Unique solution\n";
+        for (int i = 0; i < n; i++)
+            fout << "x" << i + 1 << " = " << a[i][n] << endl;
+    }
+
+    return 0;
+}
+	
+
+```
+	
+</details>
+
+### Gauss Jordan Elimination input
+
+<details>
+	   <summary>
+		   Click to see input
+	   </summary>
+	   <br>
+	
+```
+3
+2 3 1 1
+4 7 7 0
+-2 4 5 3
+
+```
+```
+2
+1 1 2
+2 2 5
+
+```
+```
+2
+1 1 2
+2 2 4
+
+```
+	
+</details>
+
+### Gauss Jordan Elimination output
+
+<details>
+	   <summary>
+		   Click to see output
+	   </summary>
+	   <br>
+
+```
+Matrix after Gauss–Jordan Elimination:
+         1         0         0 -0.844828
+         0         1         0   1.10345
+        -0        -0         1  -0.62069
+
+Result:
+Unique solution
+x1 = -0.844828
+x2 = 1.10345
+x3 = -0.62069
+
+
+
+
+```
+	
+</details>
+
+## Matrix Inversion
+
+### Matrix Inversion Theory
+
+<details>
+	   <summary>
+		   Click to see Theory
+	   </summary>
+	   <br>
+</details>
+
+### Matrix Inversion Code
+
+<details>
+	   <summary>
+		   Click to see Code
+	   </summary>
+	   <br>
+	
+```cpp
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+
+double det(double a[10][10], int n);
+void adjoint(double a[10][10], double adj[10][10], int n);
+
+int main()
+{
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int n;
+    fin >> n;
+
+    double a[10][10], adj[10][10], inv[10][10], b[10], x[10];
+
+    // Read matrix A
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            fin >> a[i][j];
+
+    // Read vector b
+    for (int i = 0; i < n; i++)
+        fin >> b[i];
+
+    double determinant = det(a, n);
+
+    if (determinant == 0)
+    {
+        fout << "Matrix inversion not possible (Determinant = 0)\n";
+        return 0;
+    }
+
+    // Compute adjoint
+    adjoint(a, adj, n);
+
+    // Compute inverse
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            inv[i][j] = adj[i][j] / determinant;
+
+    fout << "Determinant = " << determinant << "\n\n";
+
+    // Print adjoint matrix
+    fout << "Adjoint Matrix:\n";
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+            fout << setw(12) << adj[i][j];
+        fout << endl;
+    }
+
+    // Print inverse matrix
+    fout << "\nInverse Matrix:\n";
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+            fout << setw(12) << inv[i][j];
+        fout << endl;
+    }
+
+    // Compute roots: x = A⁻¹b
+    for (int i = 0; i < n; i++)
+    {
+        x[i] = 0;
+        for (int j = 0; j < n; j++)
+            x[i] += inv[i][j] * b[j];
+    }
+
+    fout << "\nRoots:\n";
+    for (int i = 0; i < n; i++)
+        fout << "x" << i + 1 << " = " << x[i] << endl;
+
+    fin.close();
+    fout.close();
+    return 0;
+}
+
+// Determinant function
+double det(double a[10][10], int n)
+{
+    if (n == 1)
+        return a[0][0];
+
+    double d = 0, temp[10][10];
+    int sign = 1;
+
+    for (int f = 0; f < n; f++)
+    {
+        int subi = 0;
+        for (int i = 1; i < n; i++)
+        {
+            int subj = 0;
+            for (int j = 0; j < n; j++)
+            {
+                if (j == f) continue;
+                temp[subi][subj++] = a[i][j];
+            }
+            subi++;
+        }
+        d += sign * a[0][f] * det(temp, n - 1);
+        sign = -sign;
+    }
+    return d;
+}
+
+// Adjoint function
+void adjoint(double a[10][10], double adj[10][10], int n)
+{
+    if (n == 1)
+    {
+        adj[0][0] = 1;
+        return;
+    }
+
+    double temp[10][10];
+    int sign;
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            int subi = 0;
+            for (int r = 0; r < n; r++)
+            {
+                if (r == i) continue;
+                int subj = 0;
+                for (int c = 0; c < n; c++)
+                {
+                    if (c == j) continue;
+                    temp[subi][subj++] = a[r][c];
+                }
+                subi++;
+            }
+            sign = ((i + j) % 2 == 0) ? 1 : -1;
+            adj[j][i] = sign * det(temp, n - 1); // transpose
+        }
+    }
+}
+
+```
+</details>
+
+### Matrix Inversion Input
+
+<details>
+	   <summary>
+		   Click to see input
+	   </summary>
+	   <br>
+
+```
+3
+2 3 1
+4 7 7
+-2 4 5
+1 0 3
+
+```
+</details>
+
+### Matrix Inversion Output
+
+<details>
+	   <summary>
+		   Click to see output
+	   </summary>
+	   <br>
+	
+```
+Determinant = -58
+
+Adjoint Matrix:
+           7         -11          14
+         -34          12         -10
+          30         -14           2
+
+Inverse Matrix:
+    -0.12069    0.189655   -0.241379
+    0.586207   -0.206897    0.172414
+   -0.517241    0.241379  -0.0344828
+
+Roots:
+x1 = -0.844828
+x2 = 1.10345
+x3 = -0.62069
+
+```
+</details>
+
+
+
+
+
+
+
+
+
+
 
 
 
