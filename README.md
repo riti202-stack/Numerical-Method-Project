@@ -772,7 +772,24 @@ Iterations needed = 4
 		&emsp; x<sub>n+1</sub> = next approximation.<br>
 
 **Algorithm/Steps** :
-1.Choose an initial guess x0 near the 
+1.Choose an initial guess x0 near the expected root.<br>
+2. Compute x1 using x1= x0 -(f(x0)/f'(x0)).<br>
+3.Check the stopping criterion:
+  1.if |x<sub>n+1</sub> -x<sub>n</sub>| < tolerance or |f(x<sub>n+1</sub>)| <tolerance ,then stop.
+  2. Otherwise set x<sub>n</sub> = x<sub>n+1</sub> and repeat step 2.<br>
+
+  **Advantages** :<br>
+   1.Fast convergence – Quadratic convergence when close to the root.
+   2.Very efficient for well-behaved functions.
+   3.Requires fewer iterations than bisection or secant for smooth functions.
+
+   **Disadvantages** :<br>
+   1.Requires the derivative f'(x) ,which may be difficult to compute.
+   2.Convergence is not guaranteed; method may diverge if the initial guess is        far from the root or if f'(x<sub>n+1</sub>)=0.
+   3.Not suitable for functions with multiple roots very close together unless        carefully initialized.
+   
+
+
 
 
 
