@@ -318,7 +318,7 @@ Converged in 13 iterations.
 
   The method assumes that over a small enough interval, the function $f(x)$ behaves approximately like a straight line. Instead of picking the midpoint of an interval $[a, b]$, it finds the x-intercept of the straight line (secant line) connecting the points $(a, f(a))$ and $(b, f(b))$.
 
-  &emsp;&emsp;&emsp; :mortar_board: $\large\color{yellow}{\mathbf{Mathematical Explanation}}$ : To find the root of $f(x) = 0$ using False Position:Choose Initial Guesses: Find two points $a$ and $b$ such that $f(a)$ and $f(b)$ have opposite signs (i.e., $f(a) \cdot f(b) < 0$). This ensures a root exists between them.Calculate $x_r$: Use the formula above to find the first estimate.Evaluate the Function: Calculate $f(x_r)$.Update the Interval:If $f(a) \cdot f(x_r) < 0$, the root lies between $a$ and $x_r$. Set $b = x_r$.If $f(a) \cdot f(x_r) > 0$, the root lies between $x_r$ and $b$. Set $a = x_r$.Repeat: Continue the process until the value of $f(x_r)$ is sufficiently close to zero or the change in $x_r$ is smaller than a predefined tolerance.
+  &emsp;&emsp;&emsp; :mortar_board: $\large\color{yellow}{\mathbf{Mathematical Explanation}}$ : To find the root of f(x) = 0 using False Position:Choose Initial Guesses: Find two points $a$ and $b$ such that $f(a)$ and $f(b)$ have opposite signs (i.e., f(a) * f(b) < 0). This ensures a root exists between them.Calculate x_r: Use the formula above to find the first estimate.Evaluate the Function: Calculate $f(x_r)$.Update the Interval:If f(a) * f(x_r) < 0, the root lies between a and x_r. Set b = x_r.If f(a) * f(x_r) > 0, the root lies between x_r$and b. Set a = x_r.Repeat: Continue the process until the value of f(x_r) is sufficiently close to zero or the change in x_r is smaller than a predefined tolerance.
 
   
 
@@ -529,7 +529,32 @@ Iterations needed = 4
 
 It is an iterative method that is an improvement over the Regula-Falsi (False Position) Method, but unlike the Newton-Raphson method, it does not require the derivative of the function. Instead, it uses two initial approximations and constructs a secant line to approximate the root.
 
-​
+*Basic Idea* : if we have a function f(x) and two initial guesses x0 and x1 that are close the root. we will draw a straight line through the points(x0,f(x0)) and (x1,f(x1)). the point where this line intersects the x-axis gives the next approximation x2.<br>
+
+Mathmatically, <br> &emsp; x<sub>n+1</sub>=x<sub>n</sub>-f(x<sub>n</sub>)*((x<sub>n</sub>-x<sub>n-1</sub>)/(f(x<sub>n</sub>)-f(x<sub>n-1</sub>))) <br>
+
+where:<br> 
+       &emsp; x<sub>n</sub> = current approximation<br>
+	   &emsp; x<sub>n-1</sub> = previous approximation<br>
+	   &emsp; x<sub>n+1</sub> = next approximation<br>
+
+**Algorithm/Steps** :
+1. Choose two initial approximations x0 and x1.
+2. compute x2 using secant formula
+3. Check if |x2-x1| or |f(x2)| is smaller than a desired tolerance.
+   1.if yes,then stop.x2 is the root.
+   2if no,then set x0=x1 ,x1=x2 and repeat step 2.
+
+**Advantages** :
+1. No derivative needed – unlike Newton-Raphson.
+2. Often faster than the bisection method.
+3. Easy to implement
+
+
+**Disadvantages** :<br>
+ 1.Convergence is not guaranteed.<br>
+ 2.May fail if f(x<sub>n</sub>)-f(x<sub>n-1</sub>) =0.<br>
+ 3.Slower than Newton-Raphson if derivative is available.
 
 </details>
 
@@ -736,6 +761,7 @@ Iterations needed = 4
 	   </summary>
 	   <br>
 	The Newton-Raphson Method is a powerful and widely used iterative numerical method for finding the roots of a nonlinear equation:
+	
 </details>
 
 ### Newton Raphson code
