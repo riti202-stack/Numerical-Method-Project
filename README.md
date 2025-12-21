@@ -1,5 +1,7 @@
 # Numerical-Method-Project
 
+## Table of Contents
+
   - [Nonlinear Equation solving Methods](#nonlinear-equation-solving-methods)
 
     - [Bisection Method](#bisection-method)
@@ -300,7 +302,7 @@ Converged in 13 iterations.
 	 
  </details>
 
- - [Back To Contents](#nonlinear-equation-solving-methods)
+ - [Back To Contents](#table-of-contents)
 
    ## False Position Method
 
