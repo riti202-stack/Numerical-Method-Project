@@ -3417,11 +3417,11 @@ Predicted y at x = 1.8 is 5.880737
 
 Assume a polynomial of degree \(m\):
 
-\[
-y = a_0 + a_1 x + a_2 x^2 + \cdots + a_m x^m
-\]
 
-where \(a_0, a_1, \dots, a_m\) are constants.
+y = a_0 + a_1 x + a_2 x^2 + .... + a_m x^m
+
+
+where (a_0, a_1, ..., a_m) are constants.
 
 ---
 
@@ -3429,15 +3429,13 @@ where \(a_0, a_1, \dots, a_m\) are constants.
 
 The error function is:
 
-\[
-S = (y_1 - \hat y_1)^2 + (y_2 - \hat y_2)^2 + (y_3 - \hat y_3)^2 + \cdots + (y_n - \hat y_n)^2
-\]
+
+S = (y1 − ŷ1)^2 + (y2 − ŷ2)^2 + (y3 − ŷ3)^2 + ... + (yn − ŷn)^2
+
 
 where
 
-\[
-\hat y_i = a_0 + a_1 x_i + a_2 x_i^2 + \cdots + a_m x_i^m
-\]
+ŷi = a0 + a1 xi + a2 xi^2 + ... + am xi^m
 
 ---
 
@@ -3445,38 +3443,26 @@ where
 
 Define the matrices:
 
-\[
-A =
-\begin{bmatrix}
-1 & x_1 & x_1^2 \\
-1 & x_2 & x_2^2 \\
-\vdots & \vdots & \vdots \\
-1 & x_n & x_n^2
-\end{bmatrix}
-\]
+A =  
+[ 1   x1   x1^2 ] <br> 
+[ 1   x2   x2^2 ] <br> 
+[  .    .     . ] <br> 
+[ 1   xn   xn^2 ]<br>
 
-\[
-X =
-\begin{bmatrix}
-a_0 \\
-a_1 \\
-a_2
-\end{bmatrix}
-\quad
-Y =
-\begin{bmatrix}
-y_1 \\
-y_2 \\
-\vdots \\
-y_n
-\end{bmatrix}
-\]
+X = <br> 
+[ a0 ]<br>  
+[ a1 ] <br> 
+[ a2 ]<br>
+
+Y =<br>  
+[ y1 ] <br> 
+[ y2 ]<br>  
+[  . ]<br>  
+[ yn ]<br>
 
 The normal equation is:
 
-\[
-A^T A X = A^T Y
-\]
+Aᵀ A X = Aᵀ Y
 
 ---
 
@@ -3484,9 +3470,9 @@ A^T A X = A^T Y
 
 If \(A^T A\) is invertible, then:
 
-\[
+
 X = (A^T A)^{-1} A^T Y
-\]
+
 
 This gives the polynomial coefficients.
 
@@ -3502,77 +3488,69 @@ Given data:
 
 Assume:
 
-\[
+
 y = a_0 + a_1 x + a_2 x^2
-\]
+
 
 ---
 
 ### $\color{Hotpink}{\mathbf{Step\ 1:\ Construct\ Matrices}}$
 
-\[
+ 
 A =
-\begin{bmatrix}
-1 & 1 & 1 \\
-1 & 2 & 4 \\
-1 & 3 & 9 \\
-1 & 4 & 16
-\end{bmatrix}
-\]
+ 
+1 & 1 & 1 <br>
+1 & 2 & 4 <br>
+1 & 3 & 9 <br>
+1 & 4 & 16<br>
+ 
 
-\[
-Y =
-\begin{bmatrix}
-2 \\
-5 \\
-10 \\
+
+Y =<br>
+ 
+2 <br>
+5 <br>
+10 <br>
 17
-\end{bmatrix}
-\]
+ 
 
 ---
 
 ### $\color{Hotpink}{\mathbf{Step\ 2:\ Normal\ Equation}}$
 
-\[
-A^T A =
-\begin{bmatrix}
-4 & 10 & 30 \\
-10 & 30 & 100 \\
-30 & 100 & 354
-\end{bmatrix}
-\]
 
-\[
-A^T Y =
-\begin{bmatrix}
-34 \\
-110 \\
-384
-\end{bmatrix}
-\]
+A^T A =<br>
+ 
+4 & 10 & 30 <br>
+10 & 30 & 100 <br>
+30 & 100 & 354<br>
+ 
+A^T Y =<br>
+ 
+34 <br>
+110 <br>
+384<br>
+ 
 
 ---
 
 ### $\color{Hotpink}{\mathbf{Step\ 3:\ Solve}}$
 
-\[
+ 
 X = (A^T A)^{-1} A^T Y
-\]
+ 
 
 Solution:
 
-\[
-a_0 = 1,\quad a_1 = 0,\quad a_2 = 1
-\]
+ 
+a_0 = 1,  a_1 = 0, a_2 = 1
+ 
 
 ---
 
 ## $\color{Hotpink}{\mathbf{Final\ Polynomial\ Model}}$
 
-\[
-\boxed{y = 1 + x^2}
-\]
+y = 1 + x^2
 
 ---
 
