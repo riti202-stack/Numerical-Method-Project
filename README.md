@@ -1,6 +1,38 @@
 # Numerical-Method-Project
 In this Project we arranged all methods different categories and under them methods are explained through theory ,C++ Code,input file and Output file.
 
+**Methods Implemented By Abida Alam Riti (2207063)**:<br>
+ 1. Non-linear System Solving Methods
+     - Bisection
+     - False Position
+     - Secant Method
+     - Newton-Raphson
+ 2. Linear System Solving Methods
+     - LU Decomposition
+     - Gauss Elimination
+     - Gauss Jordan Elimination
+     - Matrix Inversion.
+
+**Methods Implemented By Rabea Sarkar Omi (2207063)**:<br>
+ 1.Ordinary Differential Equation solving Methods<br>
+     - Runge Kutta Method<br>
+ 2.Interpolation Methods<br>
+     - Newtons Forward Interpolation Method<br>
+	 - Newtons Backward Interpolation Method<br>
+	 - Newtons Divided Difference Interpolation Method<br>
+ 3.Numerical Differentiation solving Methods<br>
+    - Numerical Differentiation By Forward Interpolation Method<br>
+	- Numerical Differentiation By Backward Interpolation Method<br>
+ 4.Solution of Numerical Integrations<br>
+    - Simpsons 1/3rd rule<br>
+	- Simpsons 3/8th rule<br>
+ 5.Solution of Curve Fitting Model<br>
+    - Least Square Regression Method For Linear Equations<br>
+	- Least Square Regression Method For transcendental equations<br>
+	- Least Square Regression Method For Polynomial Equations<br>
+
+
+
 ## Table of Contents
 
   - [Nonlinear Equation solving Methods](#nonlinear-equation-solving-methods)
