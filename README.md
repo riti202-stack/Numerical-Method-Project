@@ -1019,8 +1019,29 @@ Iterations needed = 12
 	   <summary>
 		   Click to see theory
 	   </summary>
-	   <br>
+	   <br> LU Decomposition is a matrix factorization method where a square matrix A is decomposed into two matrices : A =L*U.<br>
+	   Where :<br> &emsp; 
+	           1.L = Lower triangular matrix
+			   2.U =Upper triangular matrix<br>
 	
+			
+This method simplifies solving systems of linear equations, especially when multiple right-hand sides are involved.
+
+*Basic Idea* : instead of solving AX=B directly, we: <br> 
+1.Decompose A into L*U<br>
+2.Solve :<br>
+          1. LY =B (Forward Substitution)<br>
+		  2.UX =Y (Backward Substitution)
+
+**Advantages** :<br>
+1.Efficient for solving multiple systems with the same coefficient matrix.
+2.Reduces computational cost compared to repeated Gauss elimination.<br>
+
+
+                                                 
+**Disadvantages** :<br>
+1.Requires the matrix to be square
+2.Pivoting may be needed for numerical stability.
 </details>
 
 ### LU Decomposition Code
@@ -1197,6 +1218,27 @@ x3 = -0.62069
 		   Click to see theory
 	   </summary>
 	   <br>
+	   Gauss Elimination is a systematic method for solving systems of linear equations by converting the system into an upper triangular form using row operations.<br>
+	   
+*Basic Idea* : Given a System AX =B. We apply elementary row operations to transform the augmented matrix [A|B] into:<br>
+[* * * |*<br>0 * * | *<br>0 0 *| *] <br> then solve using back substitution.<br>
+
+**Algorithm** :<br>
+1.Form the augmented matrix [A|B]<br>
+2.Eliminate variables below the diagonal<br>
+3.Apply back substitution to find unknown
+
+**Advantages** :<br>
+1.Simple and systematic<br>
+2.Works for most linear systems.
+
+**Disadvantages** :<br>
+1.Rounding errors may occur<br>
+2.Pivoting required for stability
+
+
+
+
 	
 </details>
 
