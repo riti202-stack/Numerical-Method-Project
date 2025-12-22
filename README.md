@@ -155,7 +155,7 @@
 
 </details>
 
-#### Bisection Code
+ #### Bisection Code
 
  <details>
   <summary>Click to expand Code</summary>
