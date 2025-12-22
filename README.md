@@ -1410,6 +1410,29 @@ x3 = -0.62069
 		   Click to see theory
 	   </summary>
 	   <br>
+	   Gauss–Jordan Elimination is an extension of Gauss elimination that transforms the matrix into reduced row echelon form.<br>
+	   
+*Basic Idea* : The augmented matrix [A|B] is converted into :<br>
+[1 0 0 |x1<br>0 1 0 | x2<br>0 0 1| x3] <br>  The solution is obtained directly, without back substitution.<br>
+
+**Steps**:<br>
+1.Convert diagonal elements to 1<br>
+2.Make all other elements in the column zero<br>
+3.Continue until identity matrix is obtained.
+
+**Advantages** :<br>
+1.Simple and systematic and direct solution<br>
+2.Useful for matrix inversion
+
+**Disadvantages** :<br>
+1.More computations than Gauss elimination<br>
+2.Slower for large systems.
+
+
+
+
+	   
+	   
 	
 </details>
 
@@ -1576,6 +1599,25 @@ x3 = -0.62069
 		   Click to see Theory
 	   </summary>
 	   <br>
+	The inverse of a matrix A<sup>-1</sup> exists if and only if: A*A<sup>-1</sup> = A<sup>-1</sup>* A =I<br> Where I is the identity matrix.<br><br>
+
+*Method(Using Gauss-Jordan)* :<br>
+1.Form augmented matrix [A|I].<br>
+2.Apply Gauss–Jordan elimination<br>
+3.Convert left side to identity matrix<br>
+4.Right side becomes A<sup>-1</sup>.
+
+**Conditions for Invertability** :<br>
+1.Determinant of A must be non-zero.<br>
+2.Matrix must be square
+
+**Advantages* :<br>
+1.Computationally expensive<br>
+2.Not recommended for large systems
+
+
+	
+	
 </details>
 
 ### Matrix Inversion Code
