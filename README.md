@@ -75,18 +75,18 @@
         - [Code](#newtons-divided-difference-interpolation-method-code)
         - [input file](#newtons-divided-difference-interpolation-method-input)
         - [output file](#newtons-divided-difference-interpolation-method-output)
- - [Neumerical Differentiation solving Methods](#numerical-differentiation-solving-methods)
+ - [Numerical Differentiation solving Methods](#numerical-differentiation-solving-methods)
 
-    - [Neumerical Differentiation By Forward Interpolation Method](#neumerical-differentiation-by-forward-interpolation-method)
-      - [Theory](#neumerical-differentiation-by-forward-interpolation-method-theory)
-      - [Code](#neumerical-differentiation-by-forward-interpolation-method-code)
-      - [input file](#neumerical-differentiation-by-forward-interpolation-method-input)
-      - [output file](#neumerical-differentiation-by-forward-interpolation-method-output)
-     - [Neumerical Differentiation By Backward Interpolation Method](#neumerical-differentiation-by-backward-interpolation-method)
-       - [Theory](#neumerical-differentiation-by-backward-interpolation-method-theory)
-       - [Code](#neumerical-differentiation-by-backward-interpolation-method-code)
-       - [input file](#neumerical-differentiation-by-backward-interpolation-method-input)
-       - [output file](#neumerical-differentiation-by-backward-interpolation-method-output)
+    - [Numerical Differentiation By Forward Interpolation Method](#numerical-differentiation-by-forward-interpolation-method)
+      - [Theory](#numerical-differentiation-by-forward-interpolation-method-theory)
+      - [Code](#numerical-differentiation-by-forward-interpolation-method-code)
+      - [input file](#numerical-differentiation-by-forward-interpolation-method-input)
+      - [output file](#numerical-differentiation-by-forward-interpolation-method-output)
+     - [Numerical Differentiation By Backward Interpolation Method](#numerical-differentiation-by-backward-interpolation-method)
+       - [Theory](#numerical-differentiation-by-backward-interpolation-method-theory)
+       - [Code](#numerical-differentiation-by-backward-interpolation-method-code)
+       - [input file](#numerical-differentiation-by-backward-interpolation-method-input)
+       - [output file](#numerical-differentiation-by-backward-interpolation-method-output)
 - [Solution of Numerical Integrations](#solution-of-numerical-integrations)
   - [Simpsons One-Third Rule](#simpsons-one-third-rule)
     - [Theory](#simpsons-one-third-rule-theory)
@@ -2111,6 +2111,7 @@ int main() {
 ```
 Estimated value at x = 0.5 is 1.25
 ```
+### Newton’s Backward Interpolation Method 
 #### Newton’s Backward Interpolation Method Theory
 <details>
 <summary>Click to expand Theory</summary>
@@ -2265,6 +2266,8 @@ int main() {
 Estimated value at x = 2.5 is 7.25
 ```
  - [Back To Contents](#table-of-contents)
+
+### Newtons Divided Difference Interpolation Method
 
 #### Newtons Divided Difference Interpolation Method Theory
 <details>
@@ -2421,9 +2424,9 @@ Interpolated value at x = 3 is 9
 ```
  - [Back To Contents](#table-of-contents)
 
-# Neumerical Differentiation solving Methods 
-## Neumerical Differentiation By Forward Interpolation Method
-### Neumerical Differentiation By Forward Interpolation Method Theory
+# Numerical Differentiation solving Methods 
+### Numerical Differentiation By Forward Interpolation Method
+#### Numerical Differentiation By Forward Interpolation Method Theory
 
  
 <details>
@@ -2521,7 +2524,7 @@ h = 1,    Δy₀ = 1,    Δ²y₀ = 2
 
 </details>
 
-  ### Neumerical Differentiation By Forward Interpolation Method Code
+  ### Numerical Differentiation By Forward Interpolation Method Code
  ```cpp
 #include <iostream>
 #include <fstream>
@@ -2584,7 +2587,7 @@ int main() {
 
 
 ```
-#### Neumerical Differentiation By Forward Interpolation Method Input
+#### Numerical Differentiation By Forward Interpolation Method Input
 ```
 4
 0 1
@@ -2594,14 +2597,17 @@ int main() {
 
 
 ```
-#### Neumerical Differentiation By Forward Interpolation Method Output
+#### Numerical Differentiation By Forward Interpolation Method Output
 ```
 Approximate derivative at x = 0 is 0
 
 ```
  - [Back To Contents](#table-of-contents)
 
-#### Neumerical Differentiation By Backward Interpolation Method Theory
+
+   ###  Numerical Differentiation By Backward Interpolation Method
+
+#### Numerical Differentiation By Backward Interpolation Method Theory
 <details>
 <summary>Click to expand Theory</summary>
 <br>
@@ -2694,7 +2700,7 @@ h = 1,    ∇y₃ = 5,    ∇²y₃ = 2
 
 </details>
   
-  ### Neumerical Differentiation By Backward Interpolation Method Code
+  ### Numerical Differentiation By Backward Interpolation Method Code
  ```cpp
 #include <iostream>
 #include <fstream>
@@ -2756,7 +2762,7 @@ int main() {
 }
 
 ```
-#### Neumerical Differentiation By Backward Interpolation Method Input
+#### Numerical Differentiation By Backward Interpolation Method Input
 ```
 4
 0 1
@@ -2767,7 +2773,7 @@ int main() {
 
 
 ```
-#### Neumerical Differentiation By Backward Interpolation Method Output
+#### Numerical Differentiation By Backward Interpolation Method Output
 ```
 Approximate derivative at x = 3 is 6
 
@@ -2921,7 +2927,10 @@ Approximate integral value is 6
 ```
  - [Back To Contents](#table-of-contents)
 
-### Simpsons Three-Eighths Rule Theory
+   ### Simpsons Three-Eighths Rule
+   
+
+#### Simpsons Three-Eighths Rule Theory
 
  
 <details>
@@ -3056,9 +3065,9 @@ Approximate integral value is 20.25
 
 # Solution of Curve Fitting Model
 
-## Least Square Regression Method For Linear Equations Method
+### Least Square Regression Method For Linear Equations Method
 
-### Least Square Regression Method For Linear Equations Theory
+#### Least Square Regression Method For Linear Equations Theory
  
  
 <details>
@@ -3224,7 +3233,7 @@ int main() {
 
 ```
 
-## Least Square Regression Method For Linear Equations Output
+#### Least Square Regression Method For Linear Equations Output
 ```
 Regression line: y = a + b x
 a = 2.200000
@@ -3236,9 +3245,9 @@ For x = 6, predicted y = 5.800000
 ```
  - [Back To Contents](#table-of-contents)
 
-## Least Square Regression Method For Transcendental Equations Method
+### Least Square Regression Method For Transcendental Equations 
 
-### Least Square Regression Method For Transcendental Equations Theory
+#### Least Square Regression Method For Transcendental Equations Theory
  
 <details>  
 <summary>Click to expand Theory</summary>  
@@ -3503,7 +3512,7 @@ Predicted y at x = 1.8 is 5.880737
 
 ```
  - [Back To Contents](#table-of-contents)
-## Least Square Regression Method For Polynomial Equations Method
+## Least Square Regression Method For Polynomial Equations 
 
 ### Least Square Regression Method For Polynomial Equations Theory
 <details>
