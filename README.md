@@ -123,47 +123,35 @@
   #### Bisection Theory
   <details>
   <summary>Click to expand Theory</summary>
-  
-<br>
- 
- ---
- 
-  
-&nbsp;&nbsp;&nbsp;&nbsp; :book: $\huge\color{green}{\mathbf{Bisection Method: Theory and Application}}$
+  <br>
+     :book:The *Bisection Method* is a fundamental root-finding algorithm in numerical analysis. It is a $\color{orange}{\mathbf{bracketing method}}$ used to find the real                     <br>&emsp;&emsp;roots of a continuous function f(x) = 0.
 
-&emsp;&emsp;The *Bisection Method* is a fundamental root-finding algorithm in numerical analysis. It is a $\color{orange}{\mathbf{bracketing method}}$ used to find the real                     <br>&emsp;&emsp;roots of a continuous function f(x) = 0.
+  **Mathematical Explanation** : The method is based on the *Intermediate Value Theorem (IVT)*.
 
- 1. $\color{Hotpink}{\mathbf{Mathematical Principle}}$ : The method is based on the $\color{orange}{\mathbf{Intermediate Value Theorem (IVT)}}$.
+   - *Theorem*: If a continuous function f(x) on a closed interval [a,b] satisfies f(a)*f(b) < 0 (meaning the signs of f(a) and f(b) are opposite), then there exists at           least one value c in (a, b) such that f(c) = 0.
 
-    - $\color{red}{\mathbf{Theorem}}$: If a continuous function f(x) on a closed interval [a,b] satisfies f(a)*f(b) < 0 (meaning the signs of f(a) and f(b) are opposite), then there exists at least one value c in (a, b) such that f(c) = 0.
+   **Algorithm** : The Bisection Method repeatedly halves the interval and checks which sub-interval contains the root.<br>
 
- 2. $\color{Hotpink}{\mathbf{The Algorithm}}$ : The Bisection Method repeatedly halves the interval and checks which sub-interval contains the root.
-
-    - Initialization: Choose an interval [a,b] such that f(a)* f(b) < 0.
-    - Bisection: Calculate the midpoint m = {a + b}/2.
-    - Sign Check:
+  - Initialization: Choose an interval [a,b] such that f(a)* f(b) < 0.
+  - Bisection: Calculate the midpoint m = {a + b}/2.
+  - Sign Check:
       - If f(m) = 0, then m is the root.
       - If f(a)*f(m) < 0, the root lies in [a,m]. Set b = m
       - If f(m)*f(b) < 0, the root lies in [m, b]. Set a = m.
-    - Repeat: Continue steps 2 and 3 until the interval width $|b - a|$ is smaller than the desired tolerance $\epsilon$.
+  - Repeat: Continue steps 2 and 3 until the interval width |b - a| is smaller than the desired tolerance $\epsilon$.
 
+     ![bisection-img](./bisection.png)
 
-	  ![bisection-img](./bisection.png)
+    **Advantages** :<br>
+    1.Guaranteed convergence<br>
+    2.Simple and easy to implement<br>
+    3.No derivative required.
 
-
-
-
-
-
-   
-<br>
-
-	  
-
-
- ---
-
- 
+    **Disadvantages** :<br>
+    1.Slow convergence (linear)<br>
+    2.Requires initial bracketing<br>
+    3.Cannot detect multiple roots in interval.
+---
 
 </details>
 
@@ -300,19 +288,24 @@ Converged in 13 iterations.
 		   Click to see Theory
 	   </summary>
 	   <br>
-	   &emsp; :blue_book: <b>False Position Theory and Application</b> : <i>The False Position Method, also known by its Latin name                         Regula Falsi, is an iterative numerical method used to find the roots          of a continuous function f(x) = 0. It is a bracketing method, meaning it requires two initial guesses that surround the actual root<br>While it is similar to the Bisection Method, False Position is generally more efficient because it uses the values of the function to estimate the root's location rather than just splitting the interval in half</i>
-  &emsp; :mortar_board: $\large\color{yellow}{\mathbf{Mathematical Explanation}}$ : The method assumes that over a small enough interval, the function $f(x)$ behaves approximately like a straight line. Instead of picking the midpoint of an interval $[a, b]$, it finds the x-intercept of the straight line (secant line) connecting the points $(a, f(a))$ and $(b, f(b))$.
+	  :blue_book: <b>False Position Theory and Application</b> : The False Position Method, also known by its Latin name Regula Falsi, is an iterative numerical method used to find the roots of a continuous function f(x) = 0. It is a bracketing method, meaning it requires two initial guesses that surround the actual root<br>While it is similar to the Bisection Method, False Position is generally more efficient because it uses the values of the function to estimate the root's location rather than just splitting the interval in half<br><br>
+   
+	  **Mathematical Explanation** : The method assumes that over a small enough interval, the function f(x) behaves approximately like a straight line. Instead of picking         the midpoint of an interval [a,b] it finds the x-intercept of the straight line (secant line) connecting the points (a, f(a)) and (b, f(b)).<br>
 
-  The method assumes that over a small enough interval, the function $f(x)$ behaves approximately like a straight line. Instead of picking the midpoint of an interval $[a, b]$, it finds the x-intercept of the straight line (secant line) connecting the points $(a, f(a))$ and $(b, f(b))$.
+    The method assumes that over a small enough interval, the function f(x) behaves approximately like a straight line. Instead of picking the midpoint of an interval [a,b], it finds the x-intercept of the straight line (secant line) connecting the points (a, f(a)) and (b, f(b)).
+    <br><br>
 
- 
+   **Disadvantages** :<br>
+    1.May converge slowly for some functions<br>
+    2.One endpoint may remain fixed for many iterations<br>
+    3.Slightly more complex than bisection
 
-  
+   **Advantages** :<br>
+   1.Faster than bisection.<br>
+   2.No derivative needed<br>
+   3.Guaranteed convergence (bracketing method)
 
-	        
-	   
-	   
-   </details>
+</details>
 
    ### False position code
 
@@ -444,7 +437,7 @@ int main()
    ### False Position input
    <details>
 	   <summary>
-		   Click to see Code
+		   Click to see Input
 	   </summary>
 	   <br>
     
@@ -467,7 +460,7 @@ int main()
 
 <details>
 	   <summary>
-		   Click to see Code
+		   Click to see Output
 	   </summary>
 	   <br>
 
@@ -551,7 +544,7 @@ where:<br>
 
 <details>
 	   <summary>
-		   Click to see Theory
+		   Click to see Code
 	   </summary>
 	   <br>
 
@@ -683,7 +676,7 @@ int main()
 
 <details>
 	   <summary>
-		   Click to see Theory
+		   Click to see Input
 	   </summary>
 	   <br>
        
@@ -705,7 +698,7 @@ int main()
 ### Secant Method output
 <details>
 	   <summary>
-		   Click to see Theory
+		   Click to see Output
 	   </summary>
 	   <br>
 	
@@ -772,15 +765,9 @@ Iterations needed = 4
 
    **Disadvantages** :<br>
    1.Requires the derivative f'(x) ,which may be difficult to compute.
-   2.Convergence is not guaranteed; method may diverge if the initial guess is        far from the root or if f'(x<sub>n+1</sub>)=0.
-   3.Not suitable for functions with multiple roots very close together unless        carefully initialized.
+   2.Convergence is not guaranteed; method may diverge if the initial guess is far from the root or if f'(x<sub>n+1</sub>)=0.
+   3.Not suitable for functions with multiple roots very close together unless carefully initialized.
    
-
-
-
-
-
-	
 </details>
 
 ### Newton Raphson code
@@ -1165,7 +1152,7 @@ int main()
 
 <details>
 	   <summary>
-		   Click to see theory
+		   Click to see Input
 	   </summary>
 	   <br>
 
@@ -1185,7 +1172,7 @@ int main()
 
 <details>
 	   <summary>
-		   Click to see theory
+		   Click to see Output
 	   </summary>
 	   <br>
 	   
@@ -1208,6 +1195,9 @@ x3 = -0.62069
 ```
 	
 </details>
+
+- [Back To Contents](#table-of-contents)
+
 
 ## Gauss Elimination Method
 
@@ -1242,7 +1232,7 @@ x3 = -0.62069
 	
 </details>
 
- - [Back To Contents](#table-of-contents)
+ 
 
 ### Gauss Elimination Code
 
@@ -1346,7 +1336,7 @@ int main()
 
 <details>
 	   <summary>
-		   Click to see theory
+		   Click to see Input
 	   </summary>
 	   <br>
 	   
@@ -1377,7 +1367,7 @@ int main()
 
 <details>
 	   <summary>
-		   Click to see theory
+		   Click to see Output
 	   </summary>
 	   <br>
 	   
@@ -2111,6 +2101,8 @@ int main() {
 ```
 Estimated value at x = 0.5 is 1.25
 ```
+- [Back To Contents](#table-of-contents)
+  
 ### Newton’s Backward Interpolation Method 
 #### Newton’s Backward Interpolation Method Theory
 <details>
@@ -3512,6 +3504,7 @@ Predicted y at x = 1.8 is 5.880737
 
 ```
  - [Back To Contents](#table-of-contents)
+   
 ## Least Square Regression Method For Polynomial Equations 
 
 ### Least Square Regression Method For Polynomial Equations Theory
