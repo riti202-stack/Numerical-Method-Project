@@ -1,4 +1,5 @@
 # Numerical-Method-Project
+In this Project we arranged all methods different categories and under them methods are explained through theory ,C++ Code,input file and Output file.
 
 ## Table of Contents
 
