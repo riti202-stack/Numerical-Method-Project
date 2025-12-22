@@ -151,7 +151,7 @@
     1.Slow convergence (linear)<br>
     2.Requires initial bracketing<br>
     3.Cannot detect multiple roots in interval.
----
+
 
 </details>
 
