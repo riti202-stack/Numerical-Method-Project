@@ -118,7 +118,7 @@
 
   # Nonlinear Equation solving Methods
 
-  ## Bisection Method
+  ### Bisection Method
 
   #### Bisection Theory
   <details>
